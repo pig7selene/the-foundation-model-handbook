@@ -1,4 +1,4 @@
-#let body-font = ("Libertinus Serif", "New Computer Modern", "Times New Roman")
+#let body-font = ("Libertinus Serif", "Songti SC", "New Computer Modern", "Times New Roman")
 
 #let numbered-heading(number, title, number-width: 1.4em) = grid(
   columns: (number-width, 1fr),

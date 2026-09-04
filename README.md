@@ -12,6 +12,7 @@ This repository is a growing collection of independent Typst chapters for the co
 - [Chapter 2 — Transformer Architecture](build/02-transformer-architecture.pdf)
 - [Chapter 3 — Attention and Position Encoding](build/03-attention-and-position-encoding.pdf)
 - [Chapter 4 — Feed-Forward Networks, Normalization, and Residual Connections](build/04-feed-forward-normalization-and-residual-connections.pdf)
+- [Chapter 5 — Pretraining Objective and Language Modeling](build/05-pretraining-objective-and-language-modeling.pdf)
 
 ### Training
 
@@ -37,6 +38,7 @@ chapters/01-tokenization/                Chapter 1 source and chapter-local figu
 chapters/02-transformer-architecture/    Chapter 2 source and chapter-local figures
 chapters/03-attention-and-position-encoding/  Chapter 3 source and chapter-local figures
 chapters/04-feed-forward-normalization-and-residual-connections/  Chapter 4 source and chapter-local figures
+chapters/05-pretraining-objective-and-language-modeling/  Chapter 5 source and chapter-local figures
 figures/                 Shared vector figures, when a figure is reused
 references/              Shared BibTeX database
 scripts/                 Maintenance helpers
@@ -53,9 +55,10 @@ typst compile --root . chapters/01-tokenization/main.typ build/01-tokenization-a
 typst compile --root . chapters/02-transformer-architecture/main.typ build/02-transformer-architecture.pdf
 typst compile --root . chapters/03-attention-and-position-encoding/main.typ build/03-attention-and-position-encoding.pdf
 typst compile --root . chapters/04-feed-forward-normalization-and-residual-connections/main.typ build/04-feed-forward-normalization-and-residual-connections.pdf
+typst compile --root . chapters/05-pretraining-objective-and-language-modeling/main.typ build/05-pretraining-objective-and-language-modeling.pdf
 ```
 
-The four current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
+The five current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
 
 ## Development principles
 
