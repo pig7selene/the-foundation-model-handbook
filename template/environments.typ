@@ -15,7 +15,7 @@
     below: 0.8em,
     stroke: (left: 0.8pt + black),
   )[
-    #text(weight: "semibold")[#label #counter.display("1")#if title != none [: #title].]
+    #text(weight: "semibold")[#label #context counter.display("1")#if title != none [: #title].]
     #body
   ]
 }

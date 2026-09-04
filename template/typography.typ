@@ -1,27 +1,65 @@
 #let body-font = ("Libertinus Serif", "New Computer Modern", "Times New Roman")
 
-#let setup-typography() = {
+#let numbered-heading(number, title, number-width: 1.4em) = grid(
+  columns: (number-width, 1fr),
+  column-gutter: 0pt,
+  align: (left, left),
+  [#number],
+  [#title],
+)
+
+#let setup-chapter-typography(body) = {
   set text(font: body-font, size: 10.5pt, lang: "en")
-  set par(justify: true, leading: 0.68em, first-line-indent: 1.4em)
+  set par(
+    justify: true,
+    leading: 0.68em,
+    first-line-indent: 0pt,
+    spacing: 0.7em,
+  )
   set heading(numbering: "1.1")
+  set math.equation(numbering: "(1)")
 
-  show heading.where(level: 1): it => [
-    #v(2.4em)
-    #text(size: 11pt, weight: "semibold", tracking: 0.08em)[PART #counter(heading).at(it.location()).display("I")]
-    #v(0.7em)
-    #text(size: 24pt, weight: "semibold")[#it.body]
-    #v(1.5em)
+  show heading.where(level: 1): it => block(
+    width: 100%,
+    above: 1.8em,
+    below: 0.45em,
+  )[
+    #align(left)[
+      #text(size: 15.5pt, weight: "semibold")[
+        #if it.numbering == none [#it.body] else [
+          #numbered-heading(counter(heading).display(it.numbering), it.body, number-width: 1.4em)
+        ]
+      ]
+    ]
   ]
 
-  show heading.where(level: 2): it => [
-    #v(1.6em)
-    #text(size: 15pt, weight: "semibold")[#counter(heading).at(it.location()).display("1.1") #it.body]
-    #v(0.4em)
+  show heading.where(level: 2): it => block(
+    width: 100%,
+    above: 1.3em,
+    below: 0.3em,
+  )[
+    #align(left)[
+      #text(size: 11.5pt, weight: "semibold")[
+        #if it.numbering == none [#it.body] else [
+          #numbered-heading(counter(heading).display(it.numbering), it.body, number-width: 1.65em)
+        ]
+      ]
+    ]
   ]
 
-  show heading.where(level: 3): it => [
-    #v(1em)
-    #text(size: 11pt, weight: "semibold")[#it.body]
-    #v(0.25em)
+  show heading.where(level: 3): it => block(
+    width: 100%,
+    above: 0.9em,
+    below: 0.25em,
+  )[
+    #align(left)[
+      #text(size: 10.5pt, weight: "semibold")[
+        #if it.numbering == none [#it.body] else [
+          #numbered-heading(counter(heading).display(it.numbering), it.body, number-width: 2.1em)
+        ]
+      ]
+    ]
   ]
+
+  body
 }

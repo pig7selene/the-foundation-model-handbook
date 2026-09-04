@@ -1,48 +1,60 @@
-# The Foundation Model Handbook
+# Foundation Model Technical Notes
 
-*Architecture, Pretraining, Post-training, Reinforcement Learning, Inference, and Systems*
+*Rigorous standalone chapters for Foundation Model and LLM systems study.*
 
-`The Foundation Model Handbook` is a long-lived personal technical handbook for the core knowledge needed in foundation-model algorithm work. Its destination is a carefully edited PDF with the character of an academic textbook or technical monograph, rather than a collection of Markdown notes.
+This repository is a growing collection of independent Typst chapters for the core knowledge needed in Foundation Model and LLM algorithm work. Each PDF is designed to stand on its own while sharing a common technical vocabulary, mathematical notation, bibliography, and restrained academic visual language.
 
-## Goal
+## Published chapters
 
-The handbook records understanding accumulated through actual study, implementation, and reading. It is deliberately not an automatically generated AI encyclopedia: material that has not yet been studied or verified remains a TODO.
+### Architecture
 
-## Current status
+- [Chapter 1 — Tokenization and Input Representations](build/01-tokenization-and-input-representations.pdf)
+- [Chapter 2 — Transformer Architecture](build/02-transformer-architecture.pdf)
 
-The repository currently contains the book architecture, Typst template, bibliography plumbing, and chapter placeholders. It intentionally does **not** yet contain substantive textbook chapters.
+### Training
 
-The canonical 44-chapter writing plan, including learning objectives, prerequisites, expected depth, and the dependency order, is in [BOOK_OUTLINE.md](BOOK_OUTLINE.md).
+TODO
 
-## Layout
+### Post-training
+
+TODO
+
+### Inference
+
+TODO
+
+### Systems
+
+TODO
+
+## Project structure
 
 ```text
-main.typ                 Book entry point
-chapters/                Eight parts, each with an index.typ skeleton
-template/                Book, environments, notation, and typography definitions
-figures/                 Curated figures for the book
-tables/                  Table data sources for the book
-references/              BibTeX database
-assets/                  Supporting non-figure assets
-sources/                 Reading notes and source materials awaiting synthesis
-scripts/                 Book maintenance helpers
-build/                   Local compilation output (ignored except .gitkeep)
+template/                Shared standalone-chapter layout, environments, notation, and typography
+chapters/01-tokenization/                Chapter 1 source and chapter-local figures
+chapters/02-transformer-architecture/    Chapter 2 source and chapter-local figures
+figures/                 Shared vector figures, when a figure is reused
+references/              Shared BibTeX database
+scripts/                 Maintenance helpers
+build/                   Published chapter PDFs
+BOOK_OUTLINE.md          Topic roadmap for future chapters
 ```
 
-## Build
+## Build the published chapters
 
-Install [Typst](https://typst.app/) and run:
+Install [Typst](https://typst.app/) and compile each chapter independently:
 
 ```bash
-typst compile main.typ build/the-foundation-model-handbook.pdf
+typst compile --root . chapters/01-tokenization/main.typ build/01-tokenization-and-input-representations.pdf
+typst compile --root . chapters/02-transformer-architecture/main.typ build/02-transformer-architecture.pdf
 ```
 
-The generated PDF is intentionally excluded from version control.
+The two current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
 
 ## Development principles
 
-- Prefer precise, source-backed explanations to broad coverage.
-- Preserve standard technical terms such as Transformer, RLHF, KV Cache, and FSDP.
-- Add equations, figures, examples, and references only when they clarify a studied concept.
-- Keep unfinished material explicit with TODO markers rather than filling gaps with unverified prose.
-- Maintain a restrained academic layout suitable for sustained reading and eventual print-quality PDF output.
+- Treat each chapter as a self-contained technical document, not a blog post or a set of interview notes.
+- Prefer source-backed explanation, explicit notation, and complete local references over broad but unsupported coverage.
+- Keep shared template code, notation conventions, and bibliography infrastructure centralized.
+- Add equations, figures, tables, and formal environments only when they improve the exposition.
+- Publish a later topic only after its technical claims and chapter-level presentation have been checked.
