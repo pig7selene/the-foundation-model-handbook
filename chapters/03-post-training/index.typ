@@ -1,37 +1,22 @@
-= Part III — Post-training & Alignment
+= Part III — Post-training & Alignment <part-post-training>
 
-== SFT
+== Supervised Fine-Tuning <ch-sft>
 TODO: introduce supervised fine-tuning.
 
-== RL Fundamentals
-TODO: establish reinforcement-learning notation and objectives.
-
-== Reward Model
+== Preference Data and Reward Models <ch-preference-data-reward-models>
 TODO: describe preference data and reward modeling.
 
-== RLHF
-TODO: connect reward models and policy optimization.
+== Reinforcement Learning Fundamentals for Language Models <ch-rl-fundamentals-language-models>
+TODO: establish policy-gradient, Actor-Critic, and On-policy / Off-policy foundations.
 
-== PPO
-TODO: derive the clipped policy objective.
+== Rollouts, Advantages, and GAE <ch-rollouts-advantages-gae>
+TODO: define Rollout, Advantage Estimation, and Generalized Advantage Estimation.
 
-== DPO
-TODO: explain direct preference optimization.
+== RLHF and PPO <ch-rlhf-ppo>
+TODO: derive KL-Regularized RLHF and the PPO objective.
 
-== GRPO
-TODO: document group-relative policy optimization.
+== Direct and Group Preference Optimization <ch-direct-group-preference-optimization>
+TODO: compare DPO, GRPO, and DAPO.
 
-== Rollout
-TODO: define sampling, trajectory collection, and logging.
-
-== Verifiable Reward
-TODO: distinguish verifiable rewards from learned rewards.
-
-== Reasoning RL
-TODO: organize reasoning-oriented reinforcement learning.
-
-== DAPO
-TODO: add a source-checked account of DAPO.
-
-== Expert Iteration
-TODO: explain iterative improvement with generated expert data.
+== Reward Failure Modes and Reasoning RL <ch-reward-failure-modes-reasoning-rl>
+TODO: analyze Reward Hacking, Length Bias, Verifiable Reward, Reasoning RL, and Expert Iteration.

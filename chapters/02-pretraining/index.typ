@@ -1,46 +1,22 @@
-= Part II — Pretraining
+= Part II — Pretraining <part-pretraining>
 
-== Language Modeling
-TODO: define the language-modeling objective.
-
-== Next Token Prediction
-TODO: state the autoregressive factorization.
-
-== Cross Entropy
-TODO: derive the training loss and reporting conventions.
-
-== Data / Data Pipeline
+== Pretraining Data Pipelines <ch-pretraining-data-pipelines>
 TODO: describe data acquisition, normalization, and sharding.
 
-== Data Quality / Deduplication / Mixing
-TODO: record quality filters, deduplication, and mixture design.
+== Data Quality, Deduplication, Mixing, and Curriculum <ch-data-quality-mixing-curriculum>
+TODO: record quality filters, deduplication, mixture design, and Data Curriculum.
 
-== AdamW
+== Optimizers and Optimizer State <ch-optimizers-optimizer-state>
 TODO: document optimizer state and decoupled weight decay.
 
-== Learning Rate Scheduler
-TODO: collect scheduler families and selection criteria.
+== Learning-Rate Schedules, Batches, and Token Budgets <ch-lr-batches-token-budgets>
+TODO: connect schedules, Warmup, batch / sequence length, and Token Budget.
 
-== Warmup
-TODO: explain warmup and its stability role.
+== Mixed Precision and Numerical Stability <ch-mixed-precision-numerical-stability>
+TODO: document precision formats, loss scaling, and numerical failure modes.
 
-== Batch / Sequence Length
-TODO: relate token batch size, context length, and optimization.
+== Scaling Laws and Compute Planning <ch-scaling-laws-compute-planning>
+TODO: establish FLOPs, Compute Budget, and Chinchilla-style scaling intuition.
 
-== Mixed Precision
-TODO: document precision formats and loss scaling.
-
-== Scaling Laws
-TODO: summarize empirically grounded scaling-law results.
-
-== FLOPs / Compute Budget
-TODO: establish compute accounting and budget planning.
-
-== Training Stability
-TODO: gather failure modes, diagnostics, and mitigations.
-
-== Checkpoint
-TODO: define checkpoint contents, cadence, and recovery.
-
-== Evaluation
-TODO: specify pretraining-time evaluation practice.
+== Training Dynamics, Stability, and Recovery <ch-training-dynamics-recovery>
+TODO: cover Gradient Accumulation, Gradient Clipping, loss spikes, monitoring, checkpoints, and recovery.

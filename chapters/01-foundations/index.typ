@@ -1,37 +1,25 @@
-= Part I — Foundations
+= Part I — Foundations <part-foundations>
 
-== Tokenizer / BPE
+== Tokenization and Input Representations <ch-tokenization>
 
 TODO: establish notation, vocabulary construction, and BPE training procedure.
 
-== Embedding
+== Causal Language Modeling <ch-causal-language-modeling>
 
 TODO: explain token, position, and representation embeddings.
 
-== Transformer
+== The Transformer Computation Graph <ch-transformer-computation-graph>
 
 TODO: introduce the Transformer block as the handbook's central architectural unit.
 
-== Self-Attention
+== Self-Attention and Causal Masking <ch-self-attention-masking>
 
 TODO: derive scaled dot-product attention and its masking conventions.
 
-== MHA / MQA / GQA
+== Attention Variants and Position Encoding <ch-attention-variants-position-encoding>
 
 TODO: compare multi-head, multi-query, and grouped-query attention.
 
-== RoPE
+== Feed-Forward Networks, Normalization, and Gradient Flow <ch-ffn-normalization-gradient-flow>
 
-TODO: document rotary position embeddings and their extrapolation behavior.
-
-== FFN / SwiGLU
-
-TODO: explain feed-forward layers and gated activations.
-
-== LayerNorm / RMSNorm
-
-TODO: compare normalization choices and their placement.
-
-== Residual Connection
-
-TODO: explain residual pathways and pre-norm Transformer design.
+TODO: explain FFN / SwiGLU, LayerNorm / RMSNorm, Weight Initialization, and stable residual Gradient Flow.

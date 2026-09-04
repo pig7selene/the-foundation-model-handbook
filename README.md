@@ -12,16 +12,20 @@ The handbook records understanding accumulated through actual study, implementat
 
 The repository currently contains the book architecture, Typst template, bibliography plumbing, and chapter placeholders. It intentionally does **not** yet contain substantive textbook chapters.
 
+The canonical 44-chapter writing plan, including learning objectives, prerequisites, expected depth, and the dependency order, is in [BOOK_OUTLINE.md](BOOK_OUTLINE.md).
+
 ## Layout
 
 ```text
 main.typ                 Book entry point
-template/                Book, environment, and typography definitions
-chapters/                Eight parts of the handbook, each with an index.typ skeleton
+chapters/                Eight parts, each with an index.typ skeleton
+template/                Book, environments, notation, and typography definitions
 figures/                 Curated figures for the book
+tables/                  Table data sources for the book
 references/              BibTeX database
 assets/                  Supporting non-figure assets
 sources/                 Reading notes and source materials awaiting synthesis
+scripts/                 Book maintenance helpers
 build/                   Local compilation output (ignored except .gitkeep)
 ```
 
@@ -38,7 +42,7 @@ The generated PDF is intentionally excluded from version control.
 ## Development principles
 
 - Prefer precise, source-backed explanations to broad coverage.
-- Preserve standard English technical terms such as Transformer, RLHF, KV Cache, and FSDP; use Chinese chiefly for explanation.
+- Preserve standard technical terms such as Transformer, RLHF, KV Cache, and FSDP.
 - Add equations, figures, examples, and references only when they clarify a studied concept.
 - Keep unfinished material explicit with TODO markers rather than filling gaps with unverified prose.
 - Maintain a restrained academic layout suitable for sustained reading and eventual print-quality PDF output.

@@ -1,16 +1,10 @@
-= Part IV — Parameter-Efficient Fine-Tuning
+= Part IV — Parameter-Efficient Fine-Tuning <part-fine-tuning>
 
-== LoRA
-TODO: introduce low-rank adaptation.
+== PEFT Principles and LoRA <ch-peft-lora>
+TODO: introduce low-rank adaptation and its implementation choices.
 
-== QLoRA
-TODO: connect quantization with low-rank adaptation.
+== QLoRA and Quantized Fine-Tuning <ch-qlora-quantized-fine-tuning>
+TODO: connect quantization with low-rank adaptation and memory planning.
 
-== Adapter
-TODO: describe adapter layers and their trade-offs.
-
-== Prefix Tuning
-TODO: explain learned prefix representations.
-
-== Prompt Tuning
-TODO: distinguish soft prompt tuning from related methods.
+== Adapters and Soft-Prompt Methods <ch-adapters-soft-prompts>
+TODO: compare Adapter, Prefix Tuning, and Prompt Tuning.

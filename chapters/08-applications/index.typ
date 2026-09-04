@@ -1,19 +1,16 @@
-= Part VIII — Applications
+= Part VIII — Applications <part-applications>
 
-== Prompting
-TODO: organize prompting methods and evaluation.
+== Prompting and In-Context Learning <ch-prompting-in-context-learning>
+TODO: organize prompting methods, context design, and evaluation.
 
-== RAG
+== RAG <ch-rag>
 TODO: cover retrieval-augmented generation design.
 
-== Tool Calling
-TODO: describe tool interfaces, execution, and reliability.
+== Tool Calling <ch-tool-calling>
+TODO: describe typed tool interfaces, execution, validation, and reliability.
 
-== Agents
-TODO: define agent loops, memory, planning, and control.
+== Agent Systems <ch-agent-systems>
+TODO: define agent loops, memory, planning, control, and relevant LangChain abstractions.
 
-== LangChain
-TODO: add a source-checked note on relevant LangChain abstractions.
-
-== Agent Evaluation
-TODO: organize task, trajectory, safety, and cost evaluation.
+== Agent Evaluation <ch-agent-evaluation>
+TODO: organize task, trajectory, safety, cost, and regression evaluation.

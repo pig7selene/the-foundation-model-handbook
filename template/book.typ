@@ -1,13 +1,21 @@
 #import "typography.typ": setup-typography
 
-#let handbook(title: content, subtitle: content, author: str, body) = {
+#let handbook(
+  title: content,
+  subtitle: content,
+  author: str,
+  header_title: none,
+  body,
+) = {
   setup-typography()
+
+  let resolved_header = if header_title == none { title } else { header_title }
 
   set document(title: title, author: (author,))
   set page(
     paper: "a4",
     margin: (top: 28mm, bottom: 27mm, left: 30mm, right: 24mm),
-    header: align(center)[#text(size: 8pt, fill: gray)[The Foundation Model Handbook]],
+    header: align(center)[#text(size: 8pt, fill: gray)[#resolved_header]],
     footer: context align(center)[#text(size: 9pt)[#counter(page).display("1")]],
   )
 

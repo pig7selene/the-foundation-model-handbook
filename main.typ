@@ -1,10 +1,12 @@
 #import "template/book.typ": handbook
 #import "template/environments.typ": definition, theorem, proposition, lemma, remark, example, algorithm
+#import "template/notation.typ": notation-guide
 
 #show: handbook.with(
   title: [The Foundation Model Handbook],
   subtitle: [Architecture, Pretraining, Post-training, Reinforcement Learning, Inference, and Systems],
   author: "Personal Technical Handbook",
+  header_title: [The Foundation Model Handbook],
 )
 
 = Preface

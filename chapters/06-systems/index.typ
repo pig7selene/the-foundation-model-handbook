@@ -1,37 +1,19 @@
-= Part VI — LLM Systems
+= Part VI — LLM Systems <part-systems>
 
-== GPU Memory
-TODO: account for model, optimizer, activation, and cache memory.
+== Performance and Memory Accounting <ch-performance-memory-accounting>
+TODO: account for GPU Memory, FLOPs, throughput, and MFU.
 
-== FLOPs / Throughput / MFU
-TODO: establish performance measurements and conventions.
+== Distributed Training Fundamentals and Communication <ch-distributed-training-communication>
+TODO: explain All-Reduce, All-Gather, Reduce-Scatter, topology, and Communication Cost.
 
-== Data Parallel
-TODO: document replicated-data training.
+== Data Parallelism, ZeRO, and FSDP <ch-data-parallel-zero-fsdp>
+TODO: compare replication and sharding of parameters, gradients, and Optimizer State.
 
-== Tensor Parallel
-TODO: explain tensor partitioning and communication.
+== Tensor Parallelism and Sequence Parallelism <ch-tensor-sequence-parallelism>
+TODO: explain Transformer partitioning and its collectives.
 
-== Pipeline Parallel
-TODO: cover pipeline schedules and bubbles.
+== Pipeline and Hybrid Parallelism <ch-pipeline-hybrid-parallelism>
+TODO: cover pipeline schedules, bubbles, and hybrid-parallel design.
 
-== Sequence Parallel
-TODO: document sequence-oriented parallelism.
-
-== ZeRO
-TODO: explain optimizer-state partitioning.
-
-== FSDP
-TODO: compare fully sharded data parallelism with ZeRO.
-
-== Distributed Checkpoint
-TODO: record portable checkpointing practice.
-
-== Ray
-TODO: collect the Ray concepts relevant to LLM training.
-
-== veRL
-TODO: document veRL architecture and workflows.
-
-== DataProto
-TODO: explain DataProto after source verification.
+== Training Infrastructure and Distributed Recovery <ch-training-infrastructure-recovery>
+TODO: document Distributed Checkpoint, recovery, Ray, veRL, and DataProto.

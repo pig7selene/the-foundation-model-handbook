@@ -1,19 +1,13 @@
-= Part VII — Evaluation
+= Part VII — Evaluation <part-evaluation>
 
-== Perplexity
-TODO: define perplexity and limitations.
+== Language-Model Evaluation Fundamentals <ch-language-model-evaluation-fundamentals>
+TODO: define Perplexity, variance, calibration, and evaluation protocols.
 
-== Benchmarking
-TODO: organize benchmark design, reporting, and reproducibility.
+== Benchmark Design and Data Contamination <ch-benchmark-design-contamination>
+TODO: organize Benchmarking, contamination controls, and reporting.
 
-== LLM-as-a-Judge
-TODO: document judge models, calibration, and failure modes.
+== Preference, Reward, and Judge-Based Evaluation <ch-preference-reward-judge-evaluation>
+TODO: document LLM-as-a-Judge, human evaluation, and Reward Evaluation.
 
-== Reward Evaluation
-TODO: evaluate reward models and reward signals.
-
-== Reasoning Evaluation
-TODO: collect reasoning-specific evaluation methods.
-
-== Data Contamination
-TODO: explain detection, prevention, and disclosure.
+== Reasoning Evaluation <ch-reasoning-evaluation>
+TODO: collect reasoning-specific metrics, verifiable tasks, and failure analysis.

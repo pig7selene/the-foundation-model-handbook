@@ -1,31 +1,19 @@
-= Part V — Inference
+= Part V — Inference <part-inference>
 
-== Autoregressive Decoding
-TODO: define decoding objectives and sampling controls.
+== Autoregressive Decoding and Sampling <ch-autoregressive-decoding-sampling>
+TODO: define decoding objectives, Temperature, Top-k, Top-p, and Beam Search.
 
-== KV Cache
+== KV Cache <ch-kv-cache>
 TODO: explain cache layout, cost, and reuse.
 
-== FlashAttention
-TODO: document IO-aware attention computation.
+== Efficient Attention at Inference <ch-efficient-attention-inference>
+TODO: document FlashAttention, Sparse Attention, and MLA.
 
-== Quantization
+== Inference Quantization <ch-inference-quantization>
 TODO: organize weight, activation, and KV-cache quantization.
 
-== Speculative Decoding
+== Speculative Decoding <ch-speculative-decoding>
 TODO: explain draft-and-verify decoding.
 
-== MLA
-TODO: document Multi-head Latent Attention.
-
-== Sparse Attention
-TODO: compare sparse-attention patterns.
-
-== PagedAttention
-TODO: explain paged KV-cache management.
-
-== Continuous Batching
-TODO: document scheduling under dynamic request arrival.
-
-== vLLM
-TODO: collect vLLM system concepts and references.
+== LLM Serving and Continuous Batching <ch-llm-serving-continuous-batching>
+TODO: explain PagedAttention, Continuous Batching, scheduling, and vLLM.
