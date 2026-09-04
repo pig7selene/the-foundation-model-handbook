@@ -1,14 +1,14 @@
 #import "typography.typ": setup-typography
 
-#let handbook(title: content, subtitle: content, author: content, body) = {
+#let handbook(title: content, subtitle: content, author: str, body) = {
   setup-typography()
 
-  set document(title: title, author: author)
+  set document(title: title, author: (author,))
   set page(
     paper: "a4",
     margin: (top: 28mm, bottom: 27mm, left: 30mm, right: 24mm),
     header: align(center)[#text(size: 8pt, fill: gray)[The Foundation Model Handbook]],
-    footer: align(center)[#text(size: 9pt)[#counter(page).display("1")]],
+    footer: context align(center)[#text(size: 9pt)[#counter(page).display("1")]],
   )
 
   align(center + horizon)[
