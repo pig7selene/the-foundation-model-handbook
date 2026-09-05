@@ -32,10 +32,10 @@ This repository publishes independent technical chapters rather than a single as
 15. **Direct Preference Optimization.** Reference-relative sequence likelihoods, the implicit-reward derivation, the DPO objective, offline preference learning, the DPO--PPO trade-off, data limitations, and implementation contracts.
 16. **Group Relative Policy Optimization.** Grouped online Rollouts, relative rewards, critic-free group-normalized advantages, PPO-style clipping and KL control, verifiable reward interfaces, failure modes, and implementation contracts.
 17. **Reasoning RL, Rollouts, and Verifiable Rewards.** Sequential reasoning Rollouts, Outcome and Process Reward, deterministic verification, Best-of-$N$, Pass\@k, self-consistency, training- versus inference-time compute, failure modes, curriculum, and implementation contracts.
+18. **Post-Training Evaluation and Alignment Trade-offs.** Multi-objective evaluation, human and model-based judging, verifiers, regression suites, proxy overoptimization, contamination, capability regression, alignment tax, and evaluation contracts.
 
 ## Planned directions
 
-- **Post-training:** Broader parameter-efficient adaptation.
 - **Inference and systems:** decoding, KV Cache, quantization, speculative decoding, serving, GPU accounting, distributed training, communication, and fault recovery.
 - **Evaluation and applications:** benchmark design, contamination, LLM-as-a-Judge, RAG, tool calling, agent systems, and agent evaluation.
 

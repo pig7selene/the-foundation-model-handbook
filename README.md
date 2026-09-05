@@ -34,6 +34,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 - [Chapter 15 — Direct Preference Optimization](build/post-training/15-direct-preference-optimization.pdf)
 - [Chapter 16 — Group Relative Policy Optimization](build/post-training/16-group-relative-policy-optimization.pdf)
 - [Chapter 17 — Reasoning RL, Rollouts, and Verifiable Rewards](build/post-training/17-reasoning-rl-rollouts-and-verifiable-rewards.pdf)
+- [Chapter 18 — Post-Training Evaluation and Alignment Trade-offs](build/post-training/18-post-training-evaluation-and-alignment-trade-offs.pdf)
 
 Later parts, such as Reinforcement Learning, Inference and Serving, and RAG / Agents / LLM Applications, will be added as peer directories under `chapters/` and `build/` when their first chapters are ready.
 
@@ -85,9 +86,10 @@ typst compile --root . chapters/post-training/14-rlhf-and-ppo/main.typ build/pos
 typst compile --root . chapters/post-training/15-direct-preference-optimization/main.typ build/post-training/15-direct-preference-optimization.pdf
 typst compile --root . chapters/post-training/16-group-relative-policy-optimization/main.typ build/post-training/16-group-relative-policy-optimization.pdf
 typst compile --root . chapters/post-training/17-reasoning-rl-rollouts-and-verifiable-rewards/main.typ build/post-training/17-reasoning-rl-rollouts-and-verifiable-rewards.pdf
+typst compile --root . chapters/post-training/18-post-training-evaluation-and-alignment-trade-offs/main.typ build/post-training/18-post-training-evaluation-and-alignment-trade-offs.pdf
 ```
 
-The seventeen current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
+The eighteen current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
 
 ## Development principles
 
