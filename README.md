@@ -31,7 +31,7 @@ TODO
 
 ### Systems
 
-TODO
+- [Chapter 10 — Distributed Training](build/10-distributed-training.pdf)
 
 ## Project structure
 
@@ -46,6 +46,7 @@ chapters/06-pretraining-data/               Chapter 6 source and chapter-local f
 chapters/07-optimization-for-pretraining/    Chapter 7 source and chapter-local figures
 chapters/08-numerical-precision-and-training-stability/  Chapter 8 source and chapter-local figures
 chapters/09-scaling-laws-and-compute/            Chapter 9 source and chapter-local figures
+chapters/10-distributed-training/                 Chapter 10 source and chapter-local figures
 figures/                 Shared vector figures, when a figure is reused
 references/              Shared BibTeX database
 scripts/                 Maintenance helpers
@@ -67,9 +68,10 @@ typst compile --root . chapters/06-pretraining-data/main.typ build/06-pretrainin
 typst compile --root . chapters/07-optimization-for-pretraining/main.typ build/07-optimization-for-pretraining.pdf
 typst compile --root . chapters/08-numerical-precision-and-training-stability/main.typ build/08-numerical-precision-and-training-stability.pdf
 typst compile --root . chapters/09-scaling-laws-and-compute/main.typ build/09-scaling-laws-and-compute.pdf
+typst compile --root . chapters/10-distributed-training/main.typ build/10-distributed-training.pdf
 ```
 
-The nine current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
+The ten current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
 
 ## Development principles
 
