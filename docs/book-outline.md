@@ -34,9 +34,13 @@ This repository publishes independent technical chapters rather than a single as
 17. **Reasoning RL, Rollouts, and Verifiable Rewards.** Sequential reasoning Rollouts, Outcome and Process Reward, deterministic verification, Best-of-$N$, Pass\@k, self-consistency, training- versus inference-time compute, failure modes, curriculum, and implementation contracts.
 18. **Post-Training Evaluation and Alignment Trade-offs.** Multi-objective evaluation, human and model-based judging, verifiers, regression suites, proxy overoptimization, contamination, capability regression, alignment tax, and evaluation contracts.
 
+### Inference and Serving
+
+19. **LLM Inference Fundamentals.** Autoregressive generation, Prefill and Decode, KV Cache accounting, sampling policies, context and batching, latency and throughput metrics, and inference implementation contracts.
+
 ## Planned directions
 
-- **Inference and Serving:** decoding, sampling, KV Cache management, quantization, attention kernels, speculative decoding, batching, and latency-throughput trade-offs.
+- **Inference and Serving:** KV Cache management, quantization, attention kernels, speculative decoding, continuous batching, distributed serving, and latency-throughput optimization.
 - **Retrieval-Augmented Generation:** retrieval pipelines, embedding indexes, reranking, context construction, grounding, and retrieval evaluation.
 - **Agents and Tool Use:** tool interfaces, planning, execution loops, memory, environment interaction, and agent evaluation.
 - **Multimodal Models:** vision-language inputs, multimodal tokenization and fusion, training objectives, evaluation, and system interfaces.

@@ -2,7 +2,7 @@
 
 *Rigorous standalone chapters for Foundation Model and LLM systems study.*
 
-This repository is a long-term collection of independently compiled Typst chapters. It develops the mathematical, architectural, and systems foundations needed for Foundation Model work while maintaining one shared notation system, bibliography, and restrained academic visual language. The manuscript is organized into Foundations, Architecture, Pretraining, and Post-training, with later parts added only when their chapters are ready.
+This repository is a long-term collection of independently compiled Typst chapters. It develops the mathematical, architectural, and systems foundations needed for Foundation Model work while maintaining one shared notation system, bibliography, and restrained academic visual language. The manuscript is organized into Foundations, Architecture, Pretraining, Post-training, and Inference and Serving, with later parts added only when their chapters are ready.
 
 ## Handbook structure
 
@@ -12,6 +12,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 | Architecture | 2--4 | Decoder-only Transformer computation, attention and position encoding, FFNs, normalization, and residual connections. |
 | Pretraining | 5--11 | Language modeling, data, optimization, numerical stability, scaling, distributed execution, and training diagnostics. |
 | Post-training | 12--18 | SFT, preference data, reward modeling, RLHF/PPO, DPO, GRPO, reasoning RL, and post-training evaluation. |
+| Inference and Serving | 19 | Autoregressive generation, Prefill and Decode, KV Cache, sampling, and baseline serving metrics. |
 
 ## Completed chapters
 
@@ -45,7 +46,11 @@ This repository is a long-term collection of independently compiled Typst chapte
 - [Chapter 17 — Reasoning RL, Rollouts, and Verifiable Rewards](build/post-training/17-reasoning-rl-rollouts-and-verifiable-rewards.pdf)
 - [Chapter 18 — Post-Training Evaluation and Alignment Trade-offs](build/post-training/18-post-training-evaluation-and-alignment-trade-offs.pdf)
 
-Future peer parts will be added only when their first chapter is ready: Inference and Serving, Retrieval-Augmented Generation, Agents and Tool Use, and Multimodal Models. Each will use the same `chapters/<part>/` and `build/<part>/` layout, shared Typst infrastructure, bibliography, and review workflow.
+### Inference and Serving
+
+- [Chapter 19 — LLM Inference Fundamentals](build/inference-serving/19-llm-inference-fundamentals.pdf)
+
+Future peer parts will be added only when their first chapter is ready: Retrieval-Augmented Generation, Agents and Tool Use, and Multimodal Models. Each will use the same `chapters/<part>/` and `build/<part>/` layout, shared Typst infrastructure, bibliography, and review workflow.
 
 ## Repository layout
 
@@ -55,6 +60,7 @@ chapters/
   architecture/                Chapters 2–4: Transformer architecture
   pretraining/                 Chapters 5–11: pretraining objectives, data, and systems
   post-training/               Chapters 12--18: supervised and preference-based adaptation
+  inference-serving/           Chapter 19: autoregressive inference and baseline serving
 templates/
   typst/                       Shared chapter layout, environments, notation, and typography
 references/
@@ -87,7 +93,7 @@ To build one chapter independently, preserve its part and slug in the output pat
 typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
 ```
 
-The eighteen current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
+The nineteen current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
 
 ## Development principles
 
