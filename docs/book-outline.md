@@ -27,10 +27,11 @@ This repository publishes independent technical chapters rather than a single as
 ### Post-training
 
 12. **Supervised Fine-Tuning.** Instruction-response demonstrations, Chat Templates, assistant-only loss masking, multi-turn supervision, data mixtures, full-parameter adaptation, LoRA, failure modes, evaluation, and implementation contracts.
+13. **Preference Data and Reward Modeling.** Pairwise comparisons, preference collection, Bradley-Terry ranking, sequence-level Reward Models, calibration, evaluation, distribution shift, reward hacking, and implementation contracts.
 
 ## Planned directions
 
-- **Post-training:** preference data, Reward Models, RL foundations, RLHF, PPO, DPO, GRPO, Reasoning RL, and broader parameter-efficient adaptation.
+- **Post-training:** RL foundations, RLHF, PPO, DPO, GRPO, Reasoning RL, and broader parameter-efficient adaptation.
 - **Inference and systems:** decoding, KV Cache, quantization, speculative decoding, serving, GPU accounting, distributed training, communication, and fault recovery.
 - **Evaluation and applications:** benchmark design, contamination, LLM-as-a-Judge, RAG, tool calling, agent systems, and agent evaluation.
 

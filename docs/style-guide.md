@@ -2,7 +2,7 @@
 
 ## Status and Authority
 
-This guide records the conventions established by Chapters 1–12 and the shared Typst templates. It applies to every new standalone chapter. When this guide conflicts with an existing manuscript convention, the published chapters and `templates/typst/` are authoritative until the inconsistency is deliberately resolved across the project.
+This guide records the conventions established by Chapters 1–13 and the shared Typst templates. It applies to every new standalone chapter. When this guide conflicts with an existing manuscript convention, the published chapters and `templates/typst/` are authoritative until the inconsistency is deliberately resolved across the project.
 
 ## Language and Tone
 
