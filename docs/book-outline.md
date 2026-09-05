@@ -24,9 +24,13 @@ This repository publishes independent technical chapters rather than a single as
 10. **Distributed Training.** DDP, Tensor, Pipeline, and Sequence Parallelism; ZeRO and FSDP sharding; collective communication; memory accounting; scaling efficiency; and distributed execution contracts.
 11. **Evaluation, Checkpointing, and Training Diagnostics.** Held-out validation and perplexity; online health metrics; failure localization; fully resumable and sharded checkpoints; recovery semantics; checkpoint selection; and reproducible experiment tracking.
 
+### Post-training
+
+12. **Supervised Fine-Tuning.** Instruction-response demonstrations, Chat Templates, assistant-only loss masking, multi-turn supervision, data mixtures, full-parameter adaptation, LoRA, failure modes, evaluation, and implementation contracts.
+
 ## Planned directions
 
-- **Post-training:** SFT, preference data, Reward Models, RL foundations, RLHF, PPO, DPO, GRPO, reasoning RL, and parameter-efficient adaptation.
+- **Post-training:** preference data, Reward Models, RL foundations, RLHF, PPO, DPO, GRPO, Reasoning RL, and broader parameter-efficient adaptation.
 - **Inference and systems:** decoding, KV Cache, quantization, speculative decoding, serving, GPU accounting, distributed training, communication, and fault recovery.
 - **Evaluation and applications:** benchmark design, contamination, LLM-as-a-Judge, RAG, tool calling, agent systems, and agent evaluation.
 

@@ -2,7 +2,7 @@
 
 *Rigorous standalone chapters for Foundation Model and LLM systems study.*
 
-This repository is a long-term collection of independently compiled Typst chapters. It develops the mathematical, architectural, and systems foundations needed for Foundation Model work while maintaining one shared notation system, bibliography, and restrained academic visual language. The first writing phase is organized into three conceptual parts: Foundations, Architecture, and Pretraining.
+This repository is a long-term collection of independently compiled Typst chapters. It develops the mathematical, architectural, and systems foundations needed for Foundation Model work while maintaining one shared notation system, bibliography, and restrained academic visual language. The manuscript is organized into Foundations, Architecture, Pretraining, and Post-training, with later parts added only when their chapters are ready.
 
 ## Completed chapters
 
@@ -26,7 +26,11 @@ This repository is a long-term collection of independently compiled Typst chapte
 - [Chapter 10 — Distributed Training](build/pretraining/10-distributed-training.pdf)
 - [Chapter 11 — Evaluation, Checkpointing, and Training Diagnostics](build/pretraining/11-evaluation-checkpointing-and-training-diagnostics.pdf)
 
-Later parts, such as Post-training, Reinforcement Learning, Inference and Serving, and RAG / Agents / LLM Applications, will be added as peer directories under `chapters/` and `build/` when their first chapters are ready.
+### Post-training
+
+- [Chapter 12 — Supervised Fine-Tuning](build/post-training/12-supervised-fine-tuning.pdf)
+
+Later parts, such as Reinforcement Learning, Inference and Serving, and RAG / Agents / LLM Applications, will be added as peer directories under `chapters/` and `build/` when their first chapters are ready.
 
 ## Repository layout
 
@@ -35,6 +39,7 @@ chapters/
   foundations/                 Chapter 1: tokenization and input representations
   architecture/                Chapters 2–4: Transformer architecture
   pretraining/                 Chapters 5–11: pretraining objectives, data, and systems
+  post-training/               Chapter 12 onward: supervised and preference-based adaptation
 templates/
   typst/                       Shared chapter layout, environments, notation, and typography
 references/
@@ -69,9 +74,10 @@ typst compile --root . chapters/pretraining/08-numerical-precision-and-training-
 typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
 typst compile --root . chapters/pretraining/10-distributed-training/main.typ build/pretraining/10-distributed-training.pdf
 typst compile --root . chapters/pretraining/11-evaluation-checkpointing-and-training-diagnostics/main.typ build/pretraining/11-evaluation-checkpointing-and-training-diagnostics.pdf
+typst compile --root . chapters/post-training/12-supervised-fine-tuning/main.typ build/post-training/12-supervised-fine-tuning.pdf
 ```
 
-The eleven current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
+The twelve current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
 
 ## Development principles
 
