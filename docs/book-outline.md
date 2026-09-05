@@ -36,7 +36,9 @@ This repository publishes independent technical chapters rather than a single as
 
 ## Planned directions
 
-- **Inference and systems:** decoding, KV Cache, quantization, speculative decoding, serving, GPU accounting, distributed training, communication, and fault recovery.
-- **Evaluation and applications:** benchmark design, contamination, LLM-as-a-Judge, RAG, tool calling, agent systems, and agent evaluation.
+- **Inference and Serving:** decoding, sampling, KV Cache management, quantization, attention kernels, speculative decoding, batching, and latency-throughput trade-offs.
+- **Retrieval-Augmented Generation:** retrieval pipelines, embedding indexes, reranking, context construction, grounding, and retrieval evaluation.
+- **Agents and Tool Use:** tool interfaces, planning, execution loops, memory, environment interaction, and agent evaluation.
+- **Multimodal Models:** vision-language inputs, multimodal tokenization and fusion, training objectives, evaluation, and system interfaces.
 
 Each future chapter should declare its scope, prerequisites, and sources in its own directory and should remain readable without a combined-book build.

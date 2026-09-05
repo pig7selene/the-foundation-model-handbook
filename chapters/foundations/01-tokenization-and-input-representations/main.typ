@@ -115,7 +115,7 @@ This quantity recurs throughout Foundation Model engineering. Pretraining budget
 
 The same caution applies to evaluation. Perplexity and average negative log-likelihood are defined per model token, so their numerical values are meaningful only relative to a specified tokenizer and normalization pipeline. Comparing token-level losses across incompatible tokenizations can confound changes in modeling quality with changes in the units being predicted.
 
-= Implementation Considerations <sec-implementation-contract>
+= Implementation Contracts <sec-implementation-contract>
 
 A minimal tokenizer implementation should expose four testable operations: encode text to IDs, decode valid IDs to text, identify reserved tokens, and serialize the complete vocabulary plus segmentation rules. Round-trip tests should be performed on representative text, including whitespace, non-ASCII characters, delimiters, and malformed inputs where the contract specifies behavior. The test does not prove that a tokenizer is linguistically desirable; it establishes that the discrete interface is stable.
 
@@ -123,7 +123,7 @@ For BPE, a small implementation is especially instructive. Begin with a corpus o
 
 = Summary <sec-tokenization-summary>
 
-Tokenization is one of the first irreversible modeling decisions in a language-model pipeline. It defines the symbols that a model will embed, predict, cache, shard, and evaluate. A sound implementation makes its discrete mapping, special-token conventions, merge rules, and serialization format explicit. The resulting sequence of IDs is the input to the decoder-only computation graph developed in the accompanying Transformer Architecture chapter.
+Tokenization is one of the first irreversible modeling decisions in a language-model pipeline. It defines the symbols that a model will embed, predict, cache, shard, and evaluate. A sound implementation makes its discrete mapping, special-token conventions, merge rules, and serialization format explicit. The resulting sequence of IDs is the input to the decoder-only computation graph developed in Chapter 2, *Transformer Architecture*.
 
 #heading(level: 1, numbering: none, outlined: false)[References]
 #chapter-bibliography("/references/handbook.bib")

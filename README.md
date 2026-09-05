@@ -4,6 +4,15 @@
 
 This repository is a long-term collection of independently compiled Typst chapters. It develops the mathematical, architectural, and systems foundations needed for Foundation Model work while maintaining one shared notation system, bibliography, and restrained academic visual language. The manuscript is organized into Foundations, Architecture, Pretraining, and Post-training, with later parts added only when their chapters are ready.
 
+## Handbook structure
+
+| Part | Completed chapters | Scope |
+| --- | --- | --- |
+| Foundations | 1 | The discrete model interface: tokenization and input representations. |
+| Architecture | 2--4 | Decoder-only Transformer computation, attention and position encoding, FFNs, normalization, and residual connections. |
+| Pretraining | 5--11 | Language modeling, data, optimization, numerical stability, scaling, distributed execution, and training diagnostics. |
+| Post-training | 12--18 | SFT, preference data, reward modeling, RLHF/PPO, DPO, GRPO, reasoning RL, and post-training evaluation. |
+
 ## Completed chapters
 
 ### Foundations
@@ -36,7 +45,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 - [Chapter 17 — Reasoning RL, Rollouts, and Verifiable Rewards](build/post-training/17-reasoning-rl-rollouts-and-verifiable-rewards.pdf)
 - [Chapter 18 — Post-Training Evaluation and Alignment Trade-offs](build/post-training/18-post-training-evaluation-and-alignment-trade-offs.pdf)
 
-Later parts, such as Reinforcement Learning, Inference and Serving, and RAG / Agents / LLM Applications, will be added as peer directories under `chapters/` and `build/` when their first chapters are ready.
+Future peer parts will be added only when their first chapter is ready: Inference and Serving, Retrieval-Augmented Generation, Agents and Tool Use, and Multimodal Models. Each will use the same `chapters/<part>/` and `build/<part>/` layout, shared Typst infrastructure, bibliography, and review workflow.
 
 ## Repository layout
 
@@ -45,7 +54,7 @@ chapters/
   foundations/                 Chapter 1: tokenization and input representations
   architecture/                Chapters 2–4: Transformer architecture
   pretraining/                 Chapters 5–11: pretraining objectives, data, and systems
-  post-training/               Chapter 12 onward: supervised and preference-based adaptation
+  post-training/               Chapters 12--18: supervised and preference-based adaptation
 templates/
   typst/                       Shared chapter layout, environments, notation, and typography
 references/
@@ -66,30 +75,19 @@ Each chapter resides in `chapters/<part>/<number>-<topic>/main.typ`. Shared asse
 
 ## Build the published chapters
 
-Install [Typst](https://typst.app/) and compile each chapter independently:
+Install [Typst](https://typst.app/) and build every published standalone chapter:
 
 ```bash
-typst compile --root . chapters/foundations/01-tokenization-and-input-representations/main.typ build/foundations/01-tokenization-and-input-representations.pdf
-typst compile --root . chapters/architecture/02-transformer-architecture/main.typ build/architecture/02-transformer-architecture.pdf
-typst compile --root . chapters/architecture/03-attention-and-position-encoding/main.typ build/architecture/03-attention-and-position-encoding.pdf
-typst compile --root . chapters/architecture/04-feed-forward-normalization-and-residual-connections/main.typ build/architecture/04-feed-forward-normalization-and-residual-connections.pdf
-typst compile --root . chapters/pretraining/05-pretraining-objective-and-language-modeling/main.typ build/pretraining/05-pretraining-objective-and-language-modeling.pdf
-typst compile --root . chapters/pretraining/06-pretraining-data/main.typ build/pretraining/06-pretraining-data.pdf
-typst compile --root . chapters/pretraining/07-optimization-for-pretraining/main.typ build/pretraining/07-optimization-for-pretraining.pdf
-typst compile --root . chapters/pretraining/08-numerical-precision-and-training-stability/main.typ build/pretraining/08-numerical-precision-and-training-stability.pdf
-typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
-typst compile --root . chapters/pretraining/10-distributed-training/main.typ build/pretraining/10-distributed-training.pdf
-typst compile --root . chapters/pretraining/11-evaluation-checkpointing-and-training-diagnostics/main.typ build/pretraining/11-evaluation-checkpointing-and-training-diagnostics.pdf
-typst compile --root . chapters/post-training/12-supervised-fine-tuning/main.typ build/post-training/12-supervised-fine-tuning.pdf
-typst compile --root . chapters/post-training/13-preference-data-and-reward-modeling/main.typ build/post-training/13-preference-data-and-reward-modeling.pdf
-typst compile --root . chapters/post-training/14-rlhf-and-ppo/main.typ build/post-training/14-rlhf-and-ppo.pdf
-typst compile --root . chapters/post-training/15-direct-preference-optimization/main.typ build/post-training/15-direct-preference-optimization.pdf
-typst compile --root . chapters/post-training/16-group-relative-policy-optimization/main.typ build/post-training/16-group-relative-policy-optimization.pdf
-typst compile --root . chapters/post-training/17-reasoning-rl-rollouts-and-verifiable-rewards/main.typ build/post-training/17-reasoning-rl-rollouts-and-verifiable-rewards.pdf
-typst compile --root . chapters/post-training/18-post-training-evaluation-and-alignment-trade-offs/main.typ build/post-training/18-post-training-evaluation-and-alignment-trade-offs.pdf
+./scripts/build-all-chapters.sh
 ```
 
-The eighteen current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
+To build one chapter independently, preserve its part and slug in the output path:
+
+```bash
+typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
+```
+
+The eighteen current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
 
 ## Development principles
 

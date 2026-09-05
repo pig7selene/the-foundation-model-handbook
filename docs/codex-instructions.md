@@ -52,7 +52,7 @@ Do not rewrite, reorganize, or reformat published chapters unless a real consist
 1. Compare terminology and notation with the relevant completed chapters and `templates/typst/notation.typ`.
 2. Confirm that technical conclusions do not contradict established chapters without an explicit, source-backed reason.
 3. Verify that no earlier topic has been unnecessarily re-explained.
-4. Confirm that the source, bibliography, README link, outline entry, `.gitignore` exception, and `build/part-name/NN-topic-slug.pdf` agree on the chapter number, slug, and title.
+4. Confirm that the source, bibliography, README link, outline entry, generic `.gitignore` tracked-PDF rule, and `build/part-name/NN-topic-slug.pdf` agree on the chapter number, slug, and title.
 5. Run `git diff --check` on source and documentation changes, then inspect `git status` to ensure only intended files will be committed.
 
 ### 6. Commit and Push

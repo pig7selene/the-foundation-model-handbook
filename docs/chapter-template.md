@@ -94,4 +94,4 @@ Build it independently:
 typst compile --root . chapters/part-name/NN-topic-slug/main.typ build/part-name/NN-topic-slug.pdf
 ```
 
-Version the generated PDF in `build/`, add its explicit exception to `.gitignore`, add a README link under the correct topic group, and update `docs/book-outline.md` once the chapter is complete.
+Version the generated PDF in `build/`, confirm that the generic tracked-PDF rule in `.gitignore` covers its new part directory, add a README link under the correct topic group, and update `docs/book-outline.md` once the chapter is complete.
