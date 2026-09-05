@@ -19,6 +19,7 @@ This repository is a growing collection of independent Typst chapters for the co
 - [Chapter 6 — Pretraining Data](build/06-pretraining-data.pdf)
 - [Chapter 7 — Optimization for Pretraining](build/07-optimization-for-pretraining.pdf)
 - [Chapter 8 — Numerical Precision and Training Stability](build/08-numerical-precision-and-training-stability.pdf)
+- [Chapter 9 — Scaling Laws and Compute](build/09-scaling-laws-and-compute.pdf)
 
 ### Post-training
 
@@ -44,6 +45,7 @@ chapters/05-pretraining-objective-and-language-modeling/  Chapter 5 source and c
 chapters/06-pretraining-data/               Chapter 6 source and chapter-local figures
 chapters/07-optimization-for-pretraining/    Chapter 7 source and chapter-local figures
 chapters/08-numerical-precision-and-training-stability/  Chapter 8 source and chapter-local figures
+chapters/09-scaling-laws-and-compute/            Chapter 9 source and chapter-local figures
 figures/                 Shared vector figures, when a figure is reused
 references/              Shared BibTeX database
 scripts/                 Maintenance helpers
@@ -64,9 +66,10 @@ typst compile --root . chapters/05-pretraining-objective-and-language-modeling/m
 typst compile --root . chapters/06-pretraining-data/main.typ build/06-pretraining-data.pdf
 typst compile --root . chapters/07-optimization-for-pretraining/main.typ build/07-optimization-for-pretraining.pdf
 typst compile --root . chapters/08-numerical-precision-and-training-stability/main.typ build/08-numerical-precision-and-training-stability.pdf
+typst compile --root . chapters/09-scaling-laws-and-compute/main.typ build/09-scaling-laws-and-compute.pdf
 ```
 
-The eight current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
+The nine current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
 
 ## Development principles
 
