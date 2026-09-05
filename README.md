@@ -31,6 +31,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 - [Chapter 12 — Supervised Fine-Tuning](build/post-training/12-supervised-fine-tuning.pdf)
 - [Chapter 13 — Preference Data and Reward Modeling](build/post-training/13-preference-data-and-reward-modeling.pdf)
 - [Chapter 14 — RLHF and PPO](build/post-training/14-rlhf-and-ppo.pdf)
+- [Chapter 15 — Direct Preference Optimization](build/post-training/15-direct-preference-optimization.pdf)
 
 Later parts, such as Reinforcement Learning, Inference and Serving, and RAG / Agents / LLM Applications, will be added as peer directories under `chapters/` and `build/` when their first chapters are ready.
 
@@ -79,9 +80,10 @@ typst compile --root . chapters/pretraining/11-evaluation-checkpointing-and-trai
 typst compile --root . chapters/post-training/12-supervised-fine-tuning/main.typ build/post-training/12-supervised-fine-tuning.pdf
 typst compile --root . chapters/post-training/13-preference-data-and-reward-modeling/main.typ build/post-training/13-preference-data-and-reward-modeling.pdf
 typst compile --root . chapters/post-training/14-rlhf-and-ppo/main.typ build/post-training/14-rlhf-and-ppo.pdf
+typst compile --root . chapters/post-training/15-direct-preference-optimization/main.typ build/post-training/15-direct-preference-optimization.pdf
 ```
 
-The fourteen current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
+The fifteen current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
 
 ## Development principles
 
