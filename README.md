@@ -12,7 +12,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 | Architecture | 2--4 | Decoder-only Transformer computation, attention and position encoding, FFNs, normalization, and residual connections. |
 | Pretraining | 5--11 | Language modeling, data, optimization, numerical stability, scaling, distributed execution, and training diagnostics. |
 | Post-training | 12--18 | SFT, preference data, reward modeling, RLHF/PPO, DPO, GRPO, reasoning RL, and post-training evaluation. |
-| Inference and Serving | 19--20 | Autoregressive generation, KV Cache memory management, sampling, and baseline serving metrics. |
+| Inference and Serving | 19--21 | Autoregressive generation, KV Cache and model-memory optimization, sampling, and baseline serving metrics. |
 
 ## Completed chapters
 
@@ -50,6 +50,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 
 - [Chapter 19 — LLM Inference Fundamentals](build/inference-serving/19-llm-inference-fundamentals.pdf)
 - [Chapter 20 — KV Cache and Memory Optimization](build/inference-serving/20-kv-cache-and-memory-optimization.pdf)
+- [Chapter 21 — Quantization for LLM Inference](build/inference-serving/21-quantization-for-llm-inference.pdf)
 
 Future peer parts will be added only when their first chapter is ready: Retrieval-Augmented Generation, Agents and Tool Use, and Multimodal Models. Each will use the same `chapters/<part>/` and `build/<part>/` layout, shared Typst infrastructure, bibliography, and review workflow.
 
@@ -61,7 +62,7 @@ chapters/
   architecture/                Chapters 2–4: Transformer architecture
   pretraining/                 Chapters 5–11: pretraining objectives, data, and systems
   post-training/               Chapters 12--18: supervised and preference-based adaptation
-  inference-serving/           Chapters 19--20: inference execution and KV Cache memory
+  inference-serving/           Chapters 19--21: inference execution and memory optimization
 templates/
   typst/                       Shared chapter layout, environments, notation, and typography
 references/
@@ -94,7 +95,7 @@ To build one chapter independently, preserve its part and slug in the output pat
 typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
 ```
 
-The twenty current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
+The twenty-one current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
 
 ## Development principles
 
