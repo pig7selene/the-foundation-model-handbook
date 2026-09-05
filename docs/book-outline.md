@@ -31,10 +31,11 @@ This repository publishes independent technical chapters rather than a single as
 14. **RLHF and PPO.** Autoregressive policies, on-policy Rollouts, policy gradients, actor-critic estimation, GAE, PPO clipping, reference-model KL regularization, reward shaping, stability, and implementation contracts.
 15. **Direct Preference Optimization.** Reference-relative sequence likelihoods, the implicit-reward derivation, the DPO objective, offline preference learning, the DPO--PPO trade-off, data limitations, and implementation contracts.
 16. **Group Relative Policy Optimization.** Grouped online Rollouts, relative rewards, critic-free group-normalized advantages, PPO-style clipping and KL control, verifiable reward interfaces, failure modes, and implementation contracts.
+17. **Reasoning RL, Rollouts, and Verifiable Rewards.** Sequential reasoning Rollouts, Outcome and Process Reward, deterministic verification, Best-of-$N$, Pass\@k, self-consistency, training- versus inference-time compute, failure modes, curriculum, and implementation contracts.
 
 ## Planned directions
 
-- **Post-training:** Reasoning RL and broader parameter-efficient adaptation.
+- **Post-training:** Broader parameter-efficient adaptation.
 - **Inference and systems:** decoding, KV Cache, quantization, speculative decoding, serving, GPU accounting, distributed training, communication, and fault recovery.
 - **Evaluation and applications:** benchmark design, contamination, LLM-as-a-Judge, RAG, tool calling, agent systems, and agent evaluation.
 
