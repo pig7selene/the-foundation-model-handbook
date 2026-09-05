@@ -32,6 +32,7 @@ TODO
 ### Systems
 
 - [Chapter 10 — Distributed Training](build/10-distributed-training.pdf)
+- [Chapter 11 — Evaluation, Checkpointing, and Training Diagnostics](build/11-evaluation-checkpointing-and-training-diagnostics.pdf)
 
 ## Project structure
 
@@ -47,6 +48,7 @@ chapters/07-optimization-for-pretraining/    Chapter 7 source and chapter-local 
 chapters/08-numerical-precision-and-training-stability/  Chapter 8 source and chapter-local figures
 chapters/09-scaling-laws-and-compute/            Chapter 9 source and chapter-local figures
 chapters/10-distributed-training/                 Chapter 10 source and chapter-local figures
+chapters/11-evaluation-checkpointing-and-training-diagnostics/  Chapter 11 source and chapter-local figures
 figures/                 Shared vector figures, when a figure is reused
 references/              Shared BibTeX database
 scripts/                 Maintenance helpers
@@ -69,9 +71,10 @@ typst compile --root . chapters/07-optimization-for-pretraining/main.typ build/0
 typst compile --root . chapters/08-numerical-precision-and-training-stability/main.typ build/08-numerical-precision-and-training-stability.pdf
 typst compile --root . chapters/09-scaling-laws-and-compute/main.typ build/09-scaling-laws-and-compute.pdf
 typst compile --root . chapters/10-distributed-training/main.typ build/10-distributed-training.pdf
+typst compile --root . chapters/11-evaluation-checkpointing-and-training-diagnostics/main.typ build/11-evaluation-checkpointing-and-training-diagnostics.pdf
 ```
 
-The ten current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
+The eleven current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
 
 ## Development principles
 
