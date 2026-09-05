@@ -39,10 +39,11 @@ This repository publishes independent technical chapters rather than a single as
 19. **LLM Inference Fundamentals.** Autoregressive generation, Prefill and Decode, KV Cache accounting, sampling policies, context and batching, latency and throughput metrics, and inference implementation contracts.
 20. **KV Cache and Memory Optimization.** KV memory accounting, MHA/MQA/GQA cache layouts, paging and fragmentation, prefix reuse, cache lifecycle and eviction, KV Cache quantization, and implementation contracts.
 21. **Quantization for LLM Inference.** Affine quantization, granularity and calibration, weight-only and activation-aware regimes, PTQ and QAT, outliers, LLM.int8(), SmoothQuant, GPTQ, AWQ, kernel trade-offs, and implementation contracts.
+22. **Batching, Scheduling, and LLM Serving Systems.** Static, dynamic, and continuous batching; Prefill and Decode scheduling; queueing, admission, cache-aware capacity, preemption, fairness, service metrics, and implementation contracts.
 
 ## Planned directions
 
-- **Inference and Serving:** attention kernels, speculative decoding, continuous batching, distributed serving, and latency-throughput optimization.
+- **Inference and Serving:** attention kernels, speculative decoding, distributed serving, and latency-throughput optimization.
 - **Retrieval-Augmented Generation:** retrieval pipelines, embedding indexes, reranking, context construction, grounding, and retrieval evaluation.
 - **Agents and Tool Use:** tool interfaces, planning, execution loops, memory, environment interaction, and agent evaluation.
 - **Multimodal Models:** vision-language inputs, multimodal tokenization and fusion, training objectives, evaluation, and system interfaces.
