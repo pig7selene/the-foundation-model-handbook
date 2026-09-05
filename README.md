@@ -1,77 +1,74 @@
-# Foundation Model Technical Notes
+# The Foundation Model Handbook
 
 *Rigorous standalone chapters for Foundation Model and LLM systems study.*
 
-This repository is a growing collection of independent Typst chapters for the core knowledge needed in Foundation Model and LLM algorithm work. Each PDF is designed to stand on its own while sharing a common technical vocabulary, mathematical notation, bibliography, and restrained academic visual language.
+This repository is a long-term collection of independently compiled Typst chapters. It develops the mathematical, architectural, and systems foundations needed for Foundation Model work while maintaining one shared notation system, bibliography, and restrained academic visual language. The first writing phase is organized into three conceptual parts: Foundations, Architecture, and Pretraining.
 
-## Published chapters
+## Completed chapters
+
+### Foundations
+
+- [Chapter 1 — Tokenization and Input Representations](build/foundations/01-tokenization-and-input-representations.pdf)
 
 ### Architecture
 
-- [Chapter 1 — Tokenization and Input Representations](build/01-tokenization-and-input-representations.pdf)
-- [Chapter 2 — Transformer Architecture](build/02-transformer-architecture.pdf)
-- [Chapter 3 — Attention and Position Encoding](build/03-attention-and-position-encoding.pdf)
-- [Chapter 4 — Feed-Forward Networks, Normalization, and Residual Connections](build/04-feed-forward-normalization-and-residual-connections.pdf)
+- [Chapter 2 — Transformer Architecture](build/architecture/02-transformer-architecture.pdf)
+- [Chapter 3 — Attention and Position Encoding](build/architecture/03-attention-and-position-encoding.pdf)
+- [Chapter 4 — Feed-Forward Networks, Normalization, and Residual Connections](build/architecture/04-feed-forward-normalization-and-residual-connections.pdf)
 
-### Training
+### Pretraining
 
-- [Chapter 5 — Pretraining Objective and Language Modeling](build/05-pretraining-objective-and-language-modeling.pdf)
-- [Chapter 6 — Pretraining Data](build/06-pretraining-data.pdf)
-- [Chapter 7 — Optimization for Pretraining](build/07-optimization-for-pretraining.pdf)
-- [Chapter 8 — Numerical Precision and Training Stability](build/08-numerical-precision-and-training-stability.pdf)
-- [Chapter 9 — Scaling Laws and Compute](build/09-scaling-laws-and-compute.pdf)
+- [Chapter 5 — Pretraining Objective and Language Modeling](build/pretraining/05-pretraining-objective-and-language-modeling.pdf)
+- [Chapter 6 — Pretraining Data](build/pretraining/06-pretraining-data.pdf)
+- [Chapter 7 — Optimization for Pretraining](build/pretraining/07-optimization-for-pretraining.pdf)
+- [Chapter 8 — Numerical Precision and Training Stability](build/pretraining/08-numerical-precision-and-training-stability.pdf)
+- [Chapter 9 — Scaling Laws and Compute](build/pretraining/09-scaling-laws-and-compute.pdf)
+- [Chapter 10 — Distributed Training](build/pretraining/10-distributed-training.pdf)
+- [Chapter 11 — Evaluation, Checkpointing, and Training Diagnostics](build/pretraining/11-evaluation-checkpointing-and-training-diagnostics.pdf)
 
-### Post-training
+Later parts, such as Post-training, Reinforcement Learning, Inference and Serving, and RAG / Agents / LLM Applications, will be added as peer directories under `chapters/` and `build/` when their first chapters are ready.
 
-TODO
-
-### Inference
-
-TODO
-
-### Systems
-
-- [Chapter 10 — Distributed Training](build/10-distributed-training.pdf)
-- [Chapter 11 — Evaluation, Checkpointing, and Training Diagnostics](build/11-evaluation-checkpointing-and-training-diagnostics.pdf)
-
-## Project structure
+## Repository layout
 
 ```text
-template/                Shared standalone-chapter layout, environments, notation, and typography
-chapters/01-tokenization/                Chapter 1 source and chapter-local figures
-chapters/02-transformer-architecture/    Chapter 2 source and chapter-local figures
-chapters/03-attention-and-position-encoding/  Chapter 3 source and chapter-local figures
-chapters/04-feed-forward-normalization-and-residual-connections/  Chapter 4 source and chapter-local figures
-chapters/05-pretraining-objective-and-language-modeling/  Chapter 5 source and chapter-local figures
-chapters/06-pretraining-data/               Chapter 6 source and chapter-local figures
-chapters/07-optimization-for-pretraining/    Chapter 7 source and chapter-local figures
-chapters/08-numerical-precision-and-training-stability/  Chapter 8 source and chapter-local figures
-chapters/09-scaling-laws-and-compute/            Chapter 9 source and chapter-local figures
-chapters/10-distributed-training/                 Chapter 10 source and chapter-local figures
-chapters/11-evaluation-checkpointing-and-training-diagnostics/  Chapter 11 source and chapter-local figures
-figures/                 Shared vector figures, when a figure is reused
-references/              Shared BibTeX database
-scripts/                 Maintenance helpers
-build/                   Published chapter PDFs
-BOOK_OUTLINE.md          Topic roadmap for future chapters
+chapters/
+  foundations/                 Chapter 1: tokenization and input representations
+  architecture/                Chapters 2–4: Transformer architecture
+  pretraining/                 Chapters 5–11: pretraining objectives, data, and systems
+templates/
+  typst/                       Shared chapter layout, environments, notation, and typography
+references/
+  handbook.bib                 Shared BibTeX database
+assets/
+  figures/                     Reusable figure assets
+  tables/                      Reusable table data and assets
+docs/
+  book-outline.md              Topic roadmap and published-chapter map
+  style-guide.md               Writing, notation, and visual conventions
+  chapter-template.md          Adaptable chapter structure
+  codex-instructions.md        Required authoring and review workflow
+scripts/                       Maintenance helpers
+build/                         Versioned standalone chapter PDFs, grouped like `chapters/`
 ```
+
+Each chapter resides in `chapters/<part>/<number>-<topic>/main.typ`. Shared assets belong in `assets/`; a chapter-specific asset directory may be added inside its chapter only when that asset is not reused elsewhere.
 
 ## Build the published chapters
 
 Install [Typst](https://typst.app/) and compile each chapter independently:
 
 ```bash
-typst compile --root . chapters/01-tokenization/main.typ build/01-tokenization-and-input-representations.pdf
-typst compile --root . chapters/02-transformer-architecture/main.typ build/02-transformer-architecture.pdf
-typst compile --root . chapters/03-attention-and-position-encoding/main.typ build/03-attention-and-position-encoding.pdf
-typst compile --root . chapters/04-feed-forward-normalization-and-residual-connections/main.typ build/04-feed-forward-normalization-and-residual-connections.pdf
-typst compile --root . chapters/05-pretraining-objective-and-language-modeling/main.typ build/05-pretraining-objective-and-language-modeling.pdf
-typst compile --root . chapters/06-pretraining-data/main.typ build/06-pretraining-data.pdf
-typst compile --root . chapters/07-optimization-for-pretraining/main.typ build/07-optimization-for-pretraining.pdf
-typst compile --root . chapters/08-numerical-precision-and-training-stability/main.typ build/08-numerical-precision-and-training-stability.pdf
-typst compile --root . chapters/09-scaling-laws-and-compute/main.typ build/09-scaling-laws-and-compute.pdf
-typst compile --root . chapters/10-distributed-training/main.typ build/10-distributed-training.pdf
-typst compile --root . chapters/11-evaluation-checkpointing-and-training-diagnostics/main.typ build/11-evaluation-checkpointing-and-training-diagnostics.pdf
+typst compile --root . chapters/foundations/01-tokenization-and-input-representations/main.typ build/foundations/01-tokenization-and-input-representations.pdf
+typst compile --root . chapters/architecture/02-transformer-architecture/main.typ build/architecture/02-transformer-architecture.pdf
+typst compile --root . chapters/architecture/03-attention-and-position-encoding/main.typ build/architecture/03-attention-and-position-encoding.pdf
+typst compile --root . chapters/architecture/04-feed-forward-normalization-and-residual-connections/main.typ build/architecture/04-feed-forward-normalization-and-residual-connections.pdf
+typst compile --root . chapters/pretraining/05-pretraining-objective-and-language-modeling/main.typ build/pretraining/05-pretraining-objective-and-language-modeling.pdf
+typst compile --root . chapters/pretraining/06-pretraining-data/main.typ build/pretraining/06-pretraining-data.pdf
+typst compile --root . chapters/pretraining/07-optimization-for-pretraining/main.typ build/pretraining/07-optimization-for-pretraining.pdf
+typst compile --root . chapters/pretraining/08-numerical-precision-and-training-stability/main.typ build/pretraining/08-numerical-precision-and-training-stability.pdf
+typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
+typst compile --root . chapters/pretraining/10-distributed-training/main.typ build/pretraining/10-distributed-training.pdf
+typst compile --root . chapters/pretraining/11-evaluation-checkpointing-and-training-diagnostics/main.typ build/pretraining/11-evaluation-checkpointing-and-training-diagnostics.pdf
 ```
 
 The eleven current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository.
@@ -80,6 +77,6 @@ The eleven current PDFs are versioned so that their layout and writing style can
 
 - Treat each chapter as a self-contained technical document, not a blog post or a set of interview notes.
 - Prefer source-backed explanation, explicit notation, and complete local references over broad but unsupported coverage.
-- Keep shared template code, notation conventions, and bibliography infrastructure centralized.
+- Keep shared template code, notation conventions, bibliography infrastructure, and reusable assets centralized.
 - Add equations, figures, tables, and formal environments only when they improve the exposition.
 - Publish a later topic only after its technical claims and chapter-level presentation have been checked.
