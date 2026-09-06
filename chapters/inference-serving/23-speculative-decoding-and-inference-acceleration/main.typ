@@ -1,7 +1,7 @@
 #import "../../../templates/typst/chapter.typ": technical-chapter, abstract, academic-table, chapter-bibliography
 
 #show: technical-chapter.with(
-  title: [Speculative Decoding and Inference Acceleration],
+  title: [Speculative Decoding and #linebreak() Inference Acceleration],
 )
 
 #abstract[

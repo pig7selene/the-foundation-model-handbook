@@ -1,7 +1,7 @@
 #import "../../../templates/typst/chapter.typ": technical-chapter, abstract, academic-table, chapter-bibliography
 
 #show: technical-chapter.with(
-  title: [Batching, Scheduling, and LLM Serving Systems],
+  title: [Batching, Scheduling, and LLM #linebreak() Serving Systems],
 )
 
 #abstract[
