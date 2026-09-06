@@ -12,7 +12,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 | Architecture | 2--4 | Decoder-only Transformer computation, attention and position encoding, FFNs, normalization, and residual connections. |
 | Pretraining | 5--11 | Language modeling, data, optimization, numerical stability, scaling, distributed execution, and training diagnostics. |
 | Post-training | 12--18 | SFT, preference data, reward modeling, RLHF/PPO, DPO, GRPO, reasoning RL, and post-training evaluation. |
-| Inference and Serving | 19--22 | Autoregressive generation, memory optimization, batching, scheduling, sampling, and serving metrics. |
+| Inference and Serving | 19--23 | Autoregressive generation, memory optimization, batching, scheduling, speculative acceleration, and serving metrics. |
 
 ## Completed chapters
 
@@ -52,6 +52,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 - [Chapter 20 — KV Cache and Memory Optimization](build/inference-serving/20-kv-cache-and-memory-optimization.pdf)
 - [Chapter 21 — Quantization for LLM Inference](build/inference-serving/21-quantization-for-llm-inference.pdf)
 - [Chapter 22 — Batching, Scheduling, and LLM Serving Systems](build/inference-serving/22-batching-scheduling-and-llm-serving-systems.pdf)
+- [Chapter 23 — Speculative Decoding and Inference Acceleration](build/inference-serving/23-speculative-decoding-and-inference-acceleration.pdf)
 
 Future peer parts will be added only when their first chapter is ready: Retrieval-Augmented Generation, Agents and Tool Use, and Multimodal Models. Each will use the same `chapters/<part>/` and `build/<part>/` layout, shared Typst infrastructure, bibliography, and review workflow.
 
@@ -63,7 +64,7 @@ chapters/
   architecture/                Chapters 2–4: Transformer architecture
   pretraining/                 Chapters 5–11: pretraining objectives, data, and systems
   post-training/               Chapters 12--18: supervised and preference-based adaptation
-  inference-serving/           Chapters 19--22: inference execution, memory, and scheduling
+  inference-serving/           Chapters 19--23: inference execution, memory, scheduling, and acceleration
 templates/
   typst/                       Shared chapter layout, environments, notation, and typography
 references/
@@ -96,7 +97,7 @@ To build one chapter independently, preserve its part and slug in the output pat
 typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
 ```
 
-The twenty-two current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
+The twenty-three current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
 
 ## Development principles
 
