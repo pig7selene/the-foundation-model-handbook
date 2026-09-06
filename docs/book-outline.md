@@ -42,10 +42,10 @@ This repository publishes independent technical chapters rather than a single as
 22. **Batching, Scheduling, and LLM Serving Systems.** Static, dynamic, and continuous batching; Prefill and Decode scheduling; queueing, admission, cache-aware capacity, preemption, fairness, service metrics, and implementation contracts.
 23. **Speculative Decoding and Inference Acceleration.** Draft-and-verify generation, exact speculative sampling, acceptance and residual correction, speed trade-offs, self-speculation, multi-token prediction, cache and serving interactions, and implementation contracts.
 24. **Distributed LLM Inference and Parallelism.** Inference execution groups and replicas; Tensor, Pipeline, Sequence, and Expert Parallelism; serving collectives; Prefill--Decode disaggregation; topology, cache placement, scaling limits, and implementation contracts.
+25. **Inference System Design and Performance Optimization.** Workload and SLO characterization; bottleneck classification; Roofline intuition; cache, quantization, batching, speculation, and distributed trade-offs; profiling, capacity planning, cost per token, regression testing, and implementation contracts.
 
 ## Planned directions
 
-- **Inference and Serving:** attention kernels and latency-throughput optimization.
 - **Retrieval-Augmented Generation:** retrieval pipelines, embedding indexes, reranking, context construction, grounding, and retrieval evaluation.
 - **Agents and Tool Use:** tool interfaces, planning, execution loops, memory, environment interaction, and agent evaluation.
 - **Multimodal Models:** vision-language inputs, multimodal tokenization and fusion, training objectives, evaluation, and system interfaces.

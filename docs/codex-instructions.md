@@ -2,7 +2,7 @@
 
 ## Scope
 
-These instructions govern every new standalone chapter in this repository. Chapters 1–24, `docs/style-guide.md`, `docs/chapter-template.md`, and the shared Typst files are the project baseline. Do not begin a new chapter by copying generic Foundation Model prose or by inventing a separate visual style.
+These instructions govern every new standalone chapter in this repository. Chapters 1–25, `docs/style-guide.md`, `docs/chapter-template.md`, and the shared Typst files are the project baseline. Do not begin a new chapter by copying generic Foundation Model prose or by inventing a separate visual style.
 
 The repository is English-only. Do not write Chinese explanatory prose, translated duplicate content, or a bilingual chapter structure.
 
