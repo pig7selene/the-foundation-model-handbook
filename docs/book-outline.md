@@ -44,7 +44,7 @@ This repository publishes independent technical chapters rather than a single as
 24. **Distributed LLM Inference and Parallelism.** Inference execution groups and replicas; Tensor, Pipeline, Sequence, and Expert Parallelism; serving collectives; Prefill--Decode disaggregation; topology, cache placement, scaling limits, and implementation contracts.
 25. **Inference System Design and Performance Optimization.** Workload and SLO characterization; bottleneck classification; Roofline intuition; cache, quantization, batching, speculation, and distributed trade-offs; profiling, capacity planning, cost per token, regression testing, and implementation contracts.
 
-### Retrieval-Augmented Generation
+### Retrieval-Augmented Generation (complete)
 
 26. **Retrieval-Augmented Generation Fundamentals.** External versus parametric knowledge; offline indexing and online retrieval; corpus units, top-$k$ ranking, context construction, grounded generation, retrieval quality, freshness, provenance, RAG--fine-tuning trade-offs, and implementation contracts.
 27. **Embeddings and Semantic Retrieval.** Dense query and document embeddings; Dual-Encoders; similarity geometry and normalization; contrastive learning and negatives; semantic-retrieval storage, domain effects, failure modes, and implementation contracts.
@@ -53,6 +53,7 @@ This repository publishes independent technical chapters rather than a single as
 30. **Sparse Retrieval and Hybrid Search.** Bag-of-Words, TF-IDF, BM25, and inverted indexes; sparse--dense complementarity; candidate union, score and rank fusion, RRF, learned sparse retrieval, filtering, failure diagnosis, and implementation contracts.
 31. **Reranking and Retrieval Refinement.** Recall-oriented candidate generation; Bi-Encoders and Cross-Encoders; pointwise, pairwise, and listwise ranking; LLM reranking, diversity-aware context selection, cascades, latency, failure diagnosis, and implementation contracts.
 32. **Advanced Retrieval and RAG Architectures.** Query rewriting, expansion, Multi-Query Retrieval, decomposition, HyDE, feedback-driven and multi-hop retrieval; hierarchical, recursive, and graph-based retrieval; adaptive routing, evidence aggregation, conflict handling, and implementation contracts.
+33. **RAG Evaluation and Diagnostics.** Component and end-to-end evaluation; retrieval, context, generation, grounding, and citation metrics; ablations, error attribution, evaluation data, regression suites, online signals, cost, and implementation contracts.
 
 ## Planned directions
 
