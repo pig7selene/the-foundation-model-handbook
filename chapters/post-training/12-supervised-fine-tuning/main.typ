@@ -166,7 +166,7 @@ $
   d_"in" d_"out".
 $ <eq-lora-parameter-count>
 
-Implementations commonly scale the update by $alpha / r$ and initialize one factor so that $Delta W = 0$ at the start, preserving the base function before training. During the forward pass, the layer computes $W_0 x + B (A x)$; after training, the update can be stored separately or merged into $W_0$ for deployment. Rank, scaling, target modules, bias treatment, and merge convention are part of the adapter specification. This chapter stops at that contract; other adapter, prefix, and prompt-tuning methods belong to a broader PEFT treatment.
+Implementations commonly scale the update by $alpha / r$ and initialize one factor so that $Delta W = 0$ at the start, preserving the base function before training. During the forward pass, the layer computes $W_0 x + B (A x)$; after training, the update can be stored separately or merged into $W_0$ for deployment. Rank, scaling, target modules, bias treatment, and merge convention are part of the adapter specification. Chapter 34 gives the broader PEFT treatment.
 
 = Evaluating an SFT Model <sec-sft-evaluation>
 

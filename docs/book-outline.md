@@ -55,6 +55,10 @@ This repository publishes independent technical chapters rather than a single as
 32. **Advanced Retrieval and RAG Architectures.** Query rewriting, expansion, Multi-Query Retrieval, decomposition, HyDE, feedback-driven and multi-hop retrieval; hierarchical, recursive, and graph-based retrieval; adaptive routing, evidence aggregation, conflict handling, and implementation contracts.
 33. **RAG Evaluation and Diagnostics.** Component and end-to-end evaluation; retrieval, context, generation, grounding, and citation metrics; ablations, error attribution, evaluation data, regression suites, online signals, cost, and implementation contracts.
 
+### Parameter-Efficient Fine-Tuning
+
+34. **Parameter-Efficient Fine-Tuning.** Full fine-tuning versus frozen-base adaptation; LoRA and QLoRA; Adapter, Prefix Tuning, and Prompt Tuning methods; trainable-state and memory accounting; merging and multi-adapter serving; quantized-base adaptation; failure modes; and implementation contracts. This chapter follows Chapter 12 conceptually and is published as a later peer chapter to preserve the established standalone sequence.
+
 ## Planned directions
 
 - **Agents and Tool Use:** tool interfaces, planning, execution loops, memory, environment interaction, and agent evaluation.
