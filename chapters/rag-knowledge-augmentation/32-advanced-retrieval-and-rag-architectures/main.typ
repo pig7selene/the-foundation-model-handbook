@@ -189,7 +189,7 @@ The *evaluation contract* should compare every advanced route with a fixed one-p
 
 Advanced retrieval improves on a single query and single search pass by changing the query, repeating retrieval in response to evidence, or exposing document and graph structure. Query rewriting, expansion, and Multi-Query Retrieval address vocabulary and formulation mismatch; decomposition, iterative retrieval, and multi-hop retrieval address evidence dependencies; Parent--Child, hierarchical, recursive, and graph-based methods change how the corpus is represented and traversed.
 
-These strategies are controlled retrieval policies, not interchangeable features. A useful system preserves the original query, source provenance, and evidence history; routes only when a simple baseline cannot meet the need; and stops when additional retrieval no longer offers enough expected evidence to justify its cost. The next RAG chapter can evaluate such architectures, but meaningful evaluation begins with the observable interfaces and failure boundaries established here.
+These strategies are controlled retrieval policies, not interchangeable features. A useful system preserves the original query, source provenance, and evidence history; routes only when a simple baseline cannot meet the need; and stops when additional retrieval no longer offers enough expected evidence to justify its cost. Chapter 33 evaluates such architectures, but meaningful evaluation begins with the observable interfaces and failure boundaries established here.
 
 #pagebreak()
 #heading(level: 1, numbering: none, outlined: false)[References]
