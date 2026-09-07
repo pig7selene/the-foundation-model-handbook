@@ -33,6 +33,7 @@ This repository publishes independent technical chapters rather than a single as
 16. **Group Relative Policy Optimization.** Grouped online Rollouts, relative rewards, critic-free group-normalized advantages, PPO-style clipping and KL control, verifiable reward interfaces, failure modes, and implementation contracts.
 17. **Reasoning RL, Rollouts, and Verifiable Rewards.** Sequential reasoning Rollouts, Outcome and Process Reward, deterministic verification, Best-of-$N$, Pass\@k, self-consistency, training- versus inference-time compute, failure modes, curriculum, and implementation contracts.
 18. **Post-Training Evaluation and Alignment Trade-offs.** Multi-objective evaluation, human and model-based judging, verifiers, regression suites, proxy overoptimization, contamination, capability regression, alignment tax, and evaluation contracts.
+37. **On-Policy Alignment and Iterative Policy Improvement.** Behavior-policy versions and rollout provenance; exploration, filtering, verifier-guided selection, and Expert Iteration; DAPO dynamic sampling, asymmetric clipping, token-level loss, and overlong-response shaping; online failure modes, monitoring, and implementation contracts. This chapter extends the algorithmic Post-training sequence without covering the distributed rollout-worker architecture reserved for Chapter 39.
 
 ### Inference and Serving
 

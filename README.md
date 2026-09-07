@@ -11,7 +11,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 | Foundations | 1 | The discrete model interface: tokenization and input representations. |
 | Architecture | 2--4 | Decoder-only Transformer computation, attention and position encoding, FFNs, normalization, and residual connections. |
 | Pretraining | 5--11 | Language modeling, data, optimization, numerical stability, scaling, distributed execution, and training diagnostics. |
-| Post-training | 12--18 | SFT, preference data, reward modeling, RLHF/PPO, DPO, GRPO, reasoning RL, and post-training evaluation. |
+| Post-training | 12--18, 37 | SFT, preference data, reward modeling, RLHF/PPO, DPO, GRPO, reasoning RL, on-policy iterative improvement, and post-training evaluation. |
 | Inference and Serving | 19--25 | Autoregressive generation, memory optimization, batching, scheduling, acceleration, distributed execution, and performance design. |
 | Retrieval-Augmented Generation (complete) | 26--33 | External knowledge, semantic and sparse retrieval, vector indexing, document segmentation, reranking, advanced retrieval architectures, context construction, grounding, provenance, and RAG evaluation. |
 | Parameter-Efficient Fine-Tuning | 34 | LoRA, QLoRA, Adapters, Prefix Tuning, Prompt Tuning, and adaptation-state trade-offs. |
@@ -48,6 +48,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 - [Chapter 16 — Group Relative Policy Optimization](build/post-training/16-group-relative-policy-optimization.pdf)
 - [Chapter 17 — Reasoning RL, Rollouts, and Verifiable Rewards](build/post-training/17-reasoning-rl-rollouts-and-verifiable-rewards.pdf)
 - [Chapter 18 — Post-Training Evaluation and Alignment Trade-offs](build/post-training/18-post-training-evaluation-and-alignment-trade-offs.pdf)
+- [Chapter 37 — On-Policy Alignment and Iterative Policy Improvement](build/post-training/37-on-policy-alignment-and-iterative-policy-improvement.pdf)
 
 ### Parameter-Efficient Fine-Tuning
 
@@ -88,7 +89,7 @@ chapters/
   foundations/                 Chapter 1: tokenization and input representations
   architecture/                Chapters 2–4: Transformer architecture
   pretraining/                 Chapters 5–11: pretraining objectives, data, and systems
-  post-training/               Chapters 12--18: supervised and preference-based adaptation
+  post-training/               Chapters 12--18 and 37: supervised, preference-based, and on-policy adaptation
   inference-serving/           Chapters 19--25: inference execution, memory, scheduling, acceleration, distributed parallelism, and performance design
   rag-knowledge-augmentation/  Chapters 26--33: external knowledge, retrieval, context construction, advanced architectures, and RAG evaluation
   parameter-efficient-fine-tuning/ Chapter 34: low-rank, quantized-base, adapter, prefix, and prompt adaptation
@@ -125,7 +126,7 @@ To build one chapter independently, preserve its part and slug in the output pat
 typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
 ```
 
-The thirty-six current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
+The thirty-seven current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
 
 ## Development principles
 
