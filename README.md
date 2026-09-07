@@ -10,7 +10,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 | --- | --- | --- |
 | Foundations | 1 | The discrete model interface: tokenization and input representations. |
 | Architecture | 2--4 | Decoder-only Transformer computation, attention and position encoding, FFNs, normalization, and residual connections. |
-| Pretraining | 5--11 | Language modeling, data, optimization, numerical stability, scaling, distributed execution, and training diagnostics. |
+| Pretraining | 5--11, 38 | Language modeling, data, optimization, numerical stability, scaling, distributed execution, FSDP state management, and training diagnostics. |
 | Post-training | 12--18, 37 | SFT, preference data, reward modeling, RLHF/PPO, DPO, GRPO, reasoning RL, on-policy iterative improvement, and post-training evaluation. |
 | Inference and Serving | 19--25 | Autoregressive generation, memory optimization, batching, scheduling, acceleration, distributed execution, and performance design. |
 | Retrieval-Augmented Generation (complete) | 26--33 | External knowledge, semantic and sparse retrieval, vector indexing, document segmentation, reranking, advanced retrieval architectures, context construction, grounding, provenance, and RAG evaluation. |
@@ -38,6 +38,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 - [Chapter 9 — Scaling Laws and Compute](build/pretraining/09-scaling-laws-and-compute.pdf)
 - [Chapter 10 — Distributed Training](build/pretraining/10-distributed-training.pdf)
 - [Chapter 11 — Evaluation, Checkpointing, and Training Diagnostics](build/pretraining/11-evaluation-checkpointing-and-training-diagnostics.pdf)
+- [Chapter 38 — Practical FSDP and Distributed Training State](build/pretraining/38-practical-fsdp-and-distributed-training-state.pdf)
 
 ### Post-training
 
@@ -88,7 +89,7 @@ Future peer parts will be added only when their first chapter is ready: Agents a
 chapters/
   foundations/                 Chapter 1: tokenization and input representations
   architecture/                Chapters 2–4: Transformer architecture
-  pretraining/                 Chapters 5–11: pretraining objectives, data, and systems
+  pretraining/                 Chapters 5–11 and 38: pretraining objectives, systems, diagnostics, and practical FSDP state management
   post-training/               Chapters 12--18 and 37: supervised, preference-based, and on-policy adaptation
   inference-serving/           Chapters 19--25: inference execution, memory, scheduling, acceleration, distributed parallelism, and performance design
   rag-knowledge-augmentation/  Chapters 26--33: external knowledge, retrieval, context construction, advanced architectures, and RAG evaluation
@@ -126,7 +127,7 @@ To build one chapter independently, preserve its part and slug in the output pat
 typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
 ```
 
-The thirty-seven current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
+The thirty-eight current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
 
 ## Development principles
 

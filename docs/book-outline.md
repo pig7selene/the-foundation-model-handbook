@@ -23,6 +23,7 @@ This repository publishes independent technical chapters rather than a single as
 9. **Scaling Laws and Compute.** Parameter, token, and FLOP accounting; empirical power laws; compute-optimal allocation; Kaplan- and Chinchilla-style frontiers; planning limits; and reproducibility contracts.
 10. **Distributed Training.** DDP, Tensor, Pipeline, and Sequence Parallelism; ZeRO and FSDP sharding; collective communication; memory accounting; scaling efficiency; and distributed execution contracts.
 11. **Evaluation, Checkpointing, and Training Diagnostics.** Held-out validation and perplexity; online health metrics; failure localization; fully resumable and sharded checkpoints; recovery semantics; checkpoint selection; and reproducible experiment tracking.
+38. **Practical FSDP and Distributed Training State.** FSDP execution lifecycle; parameter, gradient, and optimizer-state sharding; All-Gather and Reduce-Scatter; wrapping granularity, mixed precision, activation checkpointing, offload, and prefetch; peak-memory and communication diagnosis; full and sharded state dictionaries; distributed checkpointing, restore, resharding, and implementation contracts. This chapter applies Chapter 10's distributed-training model and Chapter 11's resumability requirements without changing their scope.
 
 ### Post-training
 
