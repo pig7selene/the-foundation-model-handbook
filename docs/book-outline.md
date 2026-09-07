@@ -47,6 +47,7 @@ This repository publishes independent technical chapters rather than a single as
 ### Retrieval-Augmented Generation
 
 26. **Retrieval-Augmented Generation Fundamentals.** External versus parametric knowledge; offline indexing and online retrieval; corpus units, top-$k$ ranking, context construction, grounded generation, retrieval quality, freshness, provenance, RAG--fine-tuning trade-offs, and implementation contracts.
+27. **Embeddings and Semantic Retrieval.** Dense query and document embeddings; Dual-Encoders; similarity geometry and normalization; contrastive learning and negatives; semantic-retrieval storage, domain effects, failure modes, and implementation contracts.
 
 ## Planned directions
 
