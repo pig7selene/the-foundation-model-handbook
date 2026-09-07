@@ -52,6 +52,7 @@ This repository publishes independent technical chapters rather than a single as
 29. **Chunking and Document Segmentation.** Retrieval units and boundaries; fixed-length, linguistic, structure-aware, and semantic segmentation; chunk size and overlap; provenance, hierarchy, parent--child retrieval, special document forms, re-indexing, and implementation contracts.
 30. **Sparse Retrieval and Hybrid Search.** Bag-of-Words, TF-IDF, BM25, and inverted indexes; sparse--dense complementarity; candidate union, score and rank fusion, RRF, learned sparse retrieval, filtering, failure diagnosis, and implementation contracts.
 31. **Reranking and Retrieval Refinement.** Recall-oriented candidate generation; Bi-Encoders and Cross-Encoders; pointwise, pairwise, and listwise ranking; LLM reranking, diversity-aware context selection, cascades, latency, failure diagnosis, and implementation contracts.
+32. **Advanced Retrieval and RAG Architectures.** Query rewriting, expansion, Multi-Query Retrieval, decomposition, HyDE, feedback-driven and multi-hop retrieval; hierarchical, recursive, and graph-based retrieval; adaptive routing, evidence aggregation, conflict handling, and implementation contracts.
 
 ## Planned directions
 
