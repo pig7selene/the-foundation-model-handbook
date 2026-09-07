@@ -44,9 +44,12 @@ This repository publishes independent technical chapters rather than a single as
 24. **Distributed LLM Inference and Parallelism.** Inference execution groups and replicas; Tensor, Pipeline, Sequence, and Expert Parallelism; serving collectives; Prefill--Decode disaggregation; topology, cache placement, scaling limits, and implementation contracts.
 25. **Inference System Design and Performance Optimization.** Workload and SLO characterization; bottleneck classification; Roofline intuition; cache, quantization, batching, speculation, and distributed trade-offs; profiling, capacity planning, cost per token, regression testing, and implementation contracts.
 
+### Retrieval-Augmented Generation
+
+26. **Retrieval-Augmented Generation Fundamentals.** External versus parametric knowledge; offline indexing and online retrieval; corpus units, top-$k$ ranking, context construction, grounded generation, retrieval quality, freshness, provenance, RAG--fine-tuning trade-offs, and implementation contracts.
+
 ## Planned directions
 
-- **Retrieval-Augmented Generation:** retrieval pipelines, embedding indexes, reranking, context construction, grounding, and retrieval evaluation.
 - **Agents and Tool Use:** tool interfaces, planning, execution loops, memory, environment interaction, and agent evaluation.
 - **Multimodal Models:** vision-language inputs, multimodal tokenization and fusion, training objectives, evaluation, and system interfaces.
 
