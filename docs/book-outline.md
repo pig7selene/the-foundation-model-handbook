@@ -49,6 +49,7 @@ This repository publishes independent technical chapters rather than a single as
 26. **Retrieval-Augmented Generation Fundamentals.** External versus parametric knowledge; offline indexing and online retrieval; corpus units, top-$k$ ranking, context construction, grounded generation, retrieval quality, freshness, provenance, RAG--fine-tuning trade-offs, and implementation contracts.
 27. **Embeddings and Semantic Retrieval.** Dense query and document embeddings; Dual-Encoders; similarity geometry and normalization; contrastive learning and negatives; semantic-retrieval storage, domain effects, failure modes, and implementation contracts.
 28. **Vector Search and Approximate Nearest Neighbors.** Exact search and ANN recall; IVF, Product Quantization, and HNSW; candidate generation, filters, index lifecycle, memory and hardware trade-offs, vector databases, and implementation contracts.
+29. **Chunking and Document Segmentation.** Retrieval units and boundaries; fixed-length, linguistic, structure-aware, and semantic segmentation; chunk size and overlap; provenance, hierarchy, parent--child retrieval, special document forms, re-indexing, and implementation contracts.
 
 ## Planned directions
 
