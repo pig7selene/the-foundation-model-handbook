@@ -2,6 +2,23 @@
 
 This repository publishes independent technical chapters rather than a single assembled book. The roadmap records a coherent learning sequence, but it does not create source directories until a chapter is ready to be researched, written, and visually reviewed.
 
+## Core Six-Area Reading Map
+
+The intended core roadmap is complete. Chapter numbers remain stable publication identifiers rather than a forced linear curriculum; the dependency-aware reading map is:
+
+1. **LLM Architecture:** Chapters 1--4 establish the input and Transformer model. Chapters 35--36 extend that foundation with attention execution, KV representations, and long-context connectivity.
+2. **Pretraining:** Chapters 5--11 develop objective, data, optimization, numerical stability, scaling, distributed execution, and diagnostics. Chapter 38 adds the practical FSDP and distributed-state lifecycle.
+3. **Post-training / Alignment:** Chapters 12--18, 37, and 39 develop SFT, preference learning, online alignment, evaluation, and distributed RL execution.
+4. **Parameter-Efficient Fine-Tuning:** Chapter 34 naturally follows Chapter 12 and compares frozen-base adaptation methods under the same SFT data and masking contracts.
+5. **Inference Optimization:** Chapters 19--25 move from autoregressive execution and KV state to quantization, scheduling, speculation, distributed inference, and system-level optimization.
+6. **LLM Systems:** Chapters 10, 24--25, 38, and 39 form the cross-cutting systems sequence for training, FSDP state, serving, and distributed RL coordination.
+
+The map deliberately uses cross-references rather than renumbering the published standalone PDFs.
+
+### Completed Extension
+
+**Retrieval-Augmented Generation:** Chapters 26--33 are a completed knowledge-augmentation extension that may be read after the inference foundation.
+
 ## Published
 
 ### Foundations

@@ -2,7 +2,7 @@
 
 *Rigorous standalone chapters for Foundation Model and LLM systems study.*
 
-This repository is a long-term collection of independently compiled Typst chapters. It develops the mathematical, architectural, and systems foundations needed for Foundation Model work while maintaining one shared notation system, bibliography, and restrained academic visual language. The manuscript is organized into Foundations, Architecture, Pretraining, Post-training, Inference and Serving, and Retrieval-Augmented Generation, with later parts added only when their chapters are ready.
+This repository is a long-term collection of independently compiled Typst chapters. It develops the mathematical, architectural, and systems foundations needed for Foundation Model work while maintaining one shared notation system, bibliography, and restrained academic visual language. Its intended core path is complete across LLM Architecture, Pretraining, Post-training and Alignment, Parameter-Efficient Fine-Tuning, Inference Optimization, and LLM Systems. Foundations, Efficient Attention, and Retrieval-Augmented Generation provide the prerequisite and extension paths around that core.
 
 ## Handbook structure
 
@@ -16,6 +16,21 @@ This repository is a long-term collection of independently compiled Typst chapte
 | Retrieval-Augmented Generation (complete) | 26--33 | External knowledge, semantic and sparse retrieval, vector indexing, document segmentation, reranking, advanced retrieval architectures, context construction, grounding, provenance, and RAG evaluation. |
 | Parameter-Efficient Fine-Tuning | 34 | LoRA, QLoRA, Adapters, Prefix Tuning, Prompt Tuning, and adaptation-state trade-offs. |
 | Efficient Attention | 35--36 | FlashAttention, MHA/MQA/GQA/MLA, sparse and long-context attention, and KV-state design trade-offs. |
+
+## Core six-area roadmap
+
+The chapter numbers preserve publication history; this dependency-aware traversal is the recommended route through the completed core.
+
+| Roadmap area | Primary chapters | Role in the path |
+| --- | --- | --- |
+| LLM Architecture | 1--4; 35--36 | Start with the discrete input interface and decoder-only Transformer. Chapters 35--36 extend the attention model with efficient execution, KV representations, and long-context connectivity. |
+| Pretraining | 5--11; 38 | Move from the language-model objective and data distribution to optimization, numerical stability, scale, distributed execution, diagnostics, and practical FSDP state. |
+| Post-training / Alignment | 12--18; 37; 39 | Proceed from SFT and preference learning to online alignment, evaluation, and the distributed RL system that executes those algorithms. |
+| Parameter-Efficient Fine-Tuning | 34 | Read after Chapter 12 to compare frozen-base adaptation methods under the same SFT data and masking contracts. |
+| Inference Optimization | 19--25 | Develop the Prefill/Decode execution model, cache management, quantization, scheduling, speculation, distributed inference, and end-to-end performance design. |
+| LLM Systems | 10; 24--25; 38--39 | Revisit these chapters as the cross-cutting systems sequence: distributed training, FSDP state, distributed serving, performance engineering, and RL worker orchestration. |
+
+For a strictly sequential first pass, read Chapters 1--12, then Chapter 34, Chapters 13--18, Chapter 37, and Chapter 39. Read Chapters 19--25 next; revisit Chapters 35--36 after the attention, KV Cache, and serving foundations are established. Chapters 26--33 form the completed Retrieval-Augmented Generation extension.
 
 ## Completed chapters
 
