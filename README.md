@@ -13,7 +13,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 | Pretraining | 5--11 | Language modeling, data, optimization, numerical stability, scaling, distributed execution, and training diagnostics. |
 | Post-training | 12--18 | SFT, preference data, reward modeling, RLHF/PPO, DPO, GRPO, reasoning RL, and post-training evaluation. |
 | Inference and Serving | 19--25 | Autoregressive generation, memory optimization, batching, scheduling, acceleration, distributed execution, and performance design. |
-| Retrieval-Augmented Generation | 26--30 | External knowledge, semantic and sparse retrieval, vector indexing, document segmentation, context construction, grounding, provenance, and RAG system contracts. |
+| Retrieval-Augmented Generation | 26--31 | External knowledge, semantic and sparse retrieval, vector indexing, document segmentation, reranking, context construction, grounding, provenance, and RAG system contracts. |
 
 ## Completed chapters
 
@@ -64,6 +64,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 - [Chapter 28 — Vector Search and Approximate Nearest Neighbors](build/rag-knowledge-augmentation/28-vector-search-and-approximate-nearest-neighbors.pdf)
 - [Chapter 29 — Chunking and Document Segmentation](build/rag-knowledge-augmentation/29-chunking-and-document-segmentation.pdf)
 - [Chapter 30 — Sparse Retrieval and Hybrid Search](build/rag-knowledge-augmentation/30-sparse-retrieval-and-hybrid-search.pdf)
+- [Chapter 31 — Reranking and Retrieval Refinement](build/rag-knowledge-augmentation/31-reranking-and-retrieval-refinement.pdf)
 
 Future peer parts will be added only when their first chapter is ready: Agents and Tool Use and Multimodal Models. Each will use the same `chapters/<part>/` and `build/<part>/` layout, shared Typst infrastructure, bibliography, and review workflow.
 
@@ -76,7 +77,7 @@ chapters/
   pretraining/                 Chapters 5–11: pretraining objectives, data, and systems
   post-training/               Chapters 12--18: supervised and preference-based adaptation
   inference-serving/           Chapters 19--25: inference execution, memory, scheduling, acceleration, distributed parallelism, and performance design
-  rag-knowledge-augmentation/  Chapters 26--30: external knowledge, embeddings, vector search, segmentation, and hybrid retrieval
+  rag-knowledge-augmentation/  Chapters 26--31: external knowledge, embeddings, vector search, segmentation, hybrid retrieval, and reranking
 templates/
   typst/                       Shared chapter layout, environments, notation, and typography
 references/
@@ -109,7 +110,7 @@ To build one chapter independently, preserve its part and slug in the output pat
 typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
 ```
 
-The thirty current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
+The thirty-one current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
 
 ## Development principles
 
