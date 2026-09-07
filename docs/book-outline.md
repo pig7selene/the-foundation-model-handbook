@@ -63,6 +63,8 @@ This repository publishes independent technical chapters rather than a single as
 
 35. **Efficient Attention and Head-Representation Design.** Attention IO and intermediate-state costs; tiled exact attention and online Softmax; FlashAttention and later execution improvements; MHA, MQA, GQA, and MLA as KV-representation designs; positional-encoding compatibility; KV Cache and Decode trade-offs; architectural versus kernel optimization; and implementation contracts. This chapter builds on Chapter 3's attention derivation, Chapter 20's KV Cache lifecycle, and Chapter 25's bottleneck analysis without changing their scope.
 
+36. **Sparse and Long-Context Attention.** Structured attention connectivity; local, sliding-window, global, block-sparse, strided, dilated, and random patterns; Sparse Transformer, Longformer, and BigBird; receptive fields; decoder-only long-context constraints; KV Cache implications; RoPE extrapolation and context extension; retrieval versus long context; and implementation contracts. This chapter follows Chapter 35 by separating sparse architectural connectivity from FlashAttention-style dense execution.
+
 ## Planned directions
 
 - **Agents and Tool Use:** tool interfaces, planning, execution loops, memory, environment interaction, and agent evaluation.
