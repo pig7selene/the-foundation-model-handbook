@@ -50,6 +50,7 @@ This repository publishes independent technical chapters rather than a single as
 27. **Embeddings and Semantic Retrieval.** Dense query and document embeddings; Dual-Encoders; similarity geometry and normalization; contrastive learning and negatives; semantic-retrieval storage, domain effects, failure modes, and implementation contracts.
 28. **Vector Search and Approximate Nearest Neighbors.** Exact search and ANN recall; IVF, Product Quantization, and HNSW; candidate generation, filters, index lifecycle, memory and hardware trade-offs, vector databases, and implementation contracts.
 29. **Chunking and Document Segmentation.** Retrieval units and boundaries; fixed-length, linguistic, structure-aware, and semantic segmentation; chunk size and overlap; provenance, hierarchy, parent--child retrieval, special document forms, re-indexing, and implementation contracts.
+30. **Sparse Retrieval and Hybrid Search.** Bag-of-Words, TF-IDF, BM25, and inverted indexes; sparse--dense complementarity; candidate union, score and rank fusion, RRF, learned sparse retrieval, filtering, failure diagnosis, and implementation contracts.
 
 ## Planned directions
 
