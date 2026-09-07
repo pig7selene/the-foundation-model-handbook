@@ -203,7 +203,7 @@ Autoregressive decoding has a different shape. To generate one new token after a
 
 Scaled Dot-Product Attention projects a residual stream into queries, keys, and values, turns scaled query-key inner products into a distribution over legal positions, and uses that distribution to aggregate values. Causal masking makes the parallel training computation compatible with autoregressive prediction. MHA supplies multiple learned query-key geometries; MQA and GQA preserve multiple query heads while reducing key-value cache storage and traffic. RoPE inserts position through rotations of queries and keys, giving the resulting inner product a relative-displacement form.
 
-These mechanisms define the main sequence-mixing operator in a modern decoder-only Transformer. The following architectural topics can now treat attention as a concrete tensor program rather than a black box: normalization and residual design control the scale of its inputs, inference systems manage its cache, and distributed systems partition its projections and communication.
+These mechanisms define the main sequence-mixing operator in a modern decoder-only Transformer. The following architectural topics can now treat attention as a concrete tensor program rather than a black box: normalization and residual design control the scale of its inputs, inference systems manage its cache, and distributed systems partition its projections and communication. Chapter 35 revisits MHA, MQA, and GQA as KV-state designs and separates those architectural choices from FlashAttention-style kernel execution.
 
 #heading(level: 1, numbering: none, outlined: false)[References]
 #chapter-bibliography("/references/handbook.bib")

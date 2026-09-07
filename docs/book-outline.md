@@ -59,6 +59,10 @@ This repository publishes independent technical chapters rather than a single as
 
 34. **Parameter-Efficient Fine-Tuning.** Full fine-tuning versus frozen-base adaptation; LoRA and QLoRA; Adapter, Prefix Tuning, and Prompt Tuning methods; trainable-state and memory accounting; merging and multi-adapter serving; quantized-base adaptation; failure modes; and implementation contracts. This chapter follows Chapter 12 conceptually and is published as a later peer chapter to preserve the established standalone sequence.
 
+### Efficient Attention
+
+35. **Efficient Attention and Head-Representation Design.** Attention IO and intermediate-state costs; tiled exact attention and online Softmax; FlashAttention and later execution improvements; MHA, MQA, GQA, and MLA as KV-representation designs; positional-encoding compatibility; KV Cache and Decode trade-offs; architectural versus kernel optimization; and implementation contracts. This chapter builds on Chapter 3's attention derivation, Chapter 20's KV Cache lifecycle, and Chapter 25's bottleneck analysis without changing their scope.
+
 ## Planned directions
 
 - **Agents and Tool Use:** tool interfaces, planning, execution loops, memory, environment interaction, and agent evaluation.

@@ -15,6 +15,7 @@ This repository is a long-term collection of independently compiled Typst chapte
 | Inference and Serving | 19--25 | Autoregressive generation, memory optimization, batching, scheduling, acceleration, distributed execution, and performance design. |
 | Retrieval-Augmented Generation (complete) | 26--33 | External knowledge, semantic and sparse retrieval, vector indexing, document segmentation, reranking, advanced retrieval architectures, context construction, grounding, provenance, and RAG evaluation. |
 | Parameter-Efficient Fine-Tuning | 34 | LoRA, QLoRA, Adapters, Prefix Tuning, Prompt Tuning, and adaptation-state trade-offs. |
+| Efficient Attention | 35 | FlashAttention, MHA/MQA/GQA/MLA, attention IO, and KV-state design trade-offs. |
 
 ## Completed chapters
 
@@ -52,6 +53,10 @@ This repository is a long-term collection of independently compiled Typst chapte
 
 - [Chapter 34 — Parameter-Efficient Fine-Tuning](build/parameter-efficient-fine-tuning/34-parameter-efficient-fine-tuning.pdf)
 
+### Efficient Attention
+
+- [Chapter 35 — Efficient Attention and Head-Representation Design](build/efficient-attention/35-efficient-attention-and-head-representation-design.pdf)
+
 ### Inference and Serving
 
 - [Chapter 19 — LLM Inference Fundamentals](build/inference-serving/19-llm-inference-fundamentals.pdf)
@@ -86,6 +91,7 @@ chapters/
   inference-serving/           Chapters 19--25: inference execution, memory, scheduling, acceleration, distributed parallelism, and performance design
   rag-knowledge-augmentation/  Chapters 26--33: external knowledge, retrieval, context construction, advanced architectures, and RAG evaluation
   parameter-efficient-fine-tuning/ Chapter 34: low-rank, quantized-base, adapter, prefix, and prompt adaptation
+  efficient-attention/          Chapter 35: FlashAttention and KV-head/latent-representation design
 templates/
   typst/                       Shared chapter layout, environments, notation, and typography
 references/
@@ -118,7 +124,7 @@ To build one chapter independently, preserve its part and slug in the output pat
 typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
 ```
 
-The thirty-three current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
+The thirty-five current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
 
 ## Development principles
 
