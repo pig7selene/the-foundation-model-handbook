@@ -1,4 +1,7 @@
 #import "typography.typ": setup-chapter-typography
+#import sys: inputs
+
+#let handbook-build = inputs.at("handbook", default: "false") == "true"
 
 #let abstract(body) = align(center)[
   #block(
@@ -41,30 +44,34 @@
   title: content,
   body,
 ) = {
-  setup-chapter-typography({
-    set document(title: title, author: ("pig7selene",))
-    set page(
-      paper: "a4",
-      margin: (top: 24mm, bottom: 25mm, left: 31mm, right: 27mm),
-      header: none,
-      footer: context {
-        if counter(page).get().first() == 1 {
-          []
-        } else {
-          align(center)[#text(size: 8.7pt)[#counter(page).display("1")]]
-        }
-      },
-    )
-
-    align(center)[
-      #text(size: 22pt, weight: "semibold")[#title]
-      #v(1.65em)
-      #text(size: 9.5pt)[pig7selene]
-      #v(0.55em)
-      #text(size: 8.9pt, fill: luma(55%))[September 5, 2026]
-      #v(2.15em)
-    ]
-
+  if handbook-build {
     body
-  })
+  } else {
+    setup-chapter-typography({
+      set document(title: title, author: ("pig7selene",))
+      set page(
+        paper: "a4",
+        margin: (top: 24mm, bottom: 25mm, left: 31mm, right: 27mm),
+        header: none,
+        footer: context {
+          if counter(page).get().first() == 1 {
+            []
+          } else {
+            align(center)[#text(size: 8.7pt)[#counter(page).display("1")]]
+          }
+        },
+      )
+
+      align(center)[
+        #text(size: 22pt, weight: "semibold")[#title]
+        #v(1.65em)
+        #text(size: 9.5pt)[pig7selene]
+        #v(0.55em)
+        #text(size: 8.9pt, fill: luma(55%))[September 5, 2026]
+        #v(2.15em)
+      ]
+
+      body
+    })
+  }
 }

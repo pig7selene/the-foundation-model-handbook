@@ -1,8 +1,14 @@
 # The Foundation Model Handbook
 
-*Rigorous standalone chapters for Foundation Model and LLM systems study.*
+*A technical monograph on Foundation Models and LLM systems.*
 
-This repository is a long-term collection of independently compiled Typst chapters. It develops the mathematical, architectural, and systems foundations needed for Foundation Model work while maintaining one shared notation system, bibliography, and restrained academic visual language. Its intended core path is complete across LLM Architecture, Pretraining, Post-training and Alignment, Parameter-Efficient Fine-Tuning, Inference Optimization, and LLM Systems. Foundations, Efficient Attention, and Retrieval-Augmented Generation provide the prerequisite and extension paths around that core.
+This repository is a maintained Typst manuscript for readers preparing to understand, implement, and reason about modern Foundation Model systems. It develops the mathematical, architectural, training, alignment, inference, and systems foundations through independently readable chapters with shared notation, bibliography, and restrained academic typography. It is a technical handbook developed chapter by chapter, not a generated encyclopedia or a collection of disconnected notes.
+
+## Version 1.0
+
+Version 1.0 completes the handbook's core six-area learning roadmap: LLM Architecture, Pretraining, Post-training / Alignment, Parameter-Efficient Fine-Tuning, Inference Optimization, and LLM Systems. The supporting Foundations and Efficient Attention chapters establish prerequisites; the completed Retrieval-Augmented Generation sequence is a companion extension.
+
+The release edition is available as the [complete handbook PDF](build/the-foundation-model-handbook-v1.0.pdf). Standalone PDFs remain available in the chapter list below for focused reading and review.
 
 ## Handbook structure
 
@@ -97,41 +103,56 @@ For a strictly sequential first pass, read Chapters 1--12, then Chapter 34, Chap
 - [Chapter 32 — Advanced Retrieval and RAG Architectures](build/rag-knowledge-augmentation/32-advanced-retrieval-and-rag-architectures.pdf)
 - [Chapter 33 — RAG Evaluation and Diagnostics](build/rag-knowledge-augmentation/33-rag-evaluation-and-diagnostics.pdf)
 
-Future peer parts will be added only when their first chapter is ready: Agents and Tool Use and Multimodal Models. Each will use the same `chapters/<part>/` and `build/<part>/` layout, shared Typst infrastructure, bibliography, and review workflow.
+Future editions may add peer sections only when their first chapter is ready for the same source, layout, and review standard. Those possible extensions are outside the v1.0 core scope.
 
 ## Repository layout
 
 ```text
+main.typ                      Complete v1.0 handbook source, in intended reading order
 chapters/
-  foundations/                 Chapter 1: tokenization and input representations
-  architecture/                Chapters 2–4: Transformer architecture
-  pretraining/                 Chapters 5–11 and 38: pretraining objectives, systems, diagnostics, and practical FSDP state management
-  post-training/               Chapters 12--18, 37, and 39: supervised, preference-based, on-policy, and distributed RL adaptation
-  inference-serving/           Chapters 19--25: inference execution, memory, scheduling, acceleration, distributed parallelism, and performance design
-  rag-knowledge-augmentation/  Chapters 26--33: external knowledge, retrieval, context construction, advanced architectures, and RAG evaluation
+  foundations/                Chapter 1: tokenization and input representations
+  architecture/               Chapters 2--4: Transformer architecture
+  pretraining/                Chapters 5--11 and 38: objective, data, optimization, systems, and diagnostics
+  post-training/              Chapters 12--18, 37, and 39: SFT, preference learning, RL, and RL systems
+  inference-serving/          Chapters 19--25: execution, cache, scheduling, acceleration, and serving systems
   parameter-efficient-fine-tuning/ Chapter 34: low-rank, quantized-base, adapter, prefix, and prompt adaptation
-  efficient-attention/          Chapters 35--36: FlashAttention, KV representation, and sparse long-context attention
+  efficient-attention/        Chapters 35--36: FlashAttention, KV representation, and sparse long-context attention
+  rag-knowledge-augmentation/ Chapters 26--33: retrieval, context construction, advanced architectures, and evaluation
 templates/
-  typst/                       Shared chapter layout, environments, notation, and typography
+  typst/                      Shared book and chapter layout, environments, notation, and typography
 references/
-  handbook.bib                 Shared BibTeX database
+  handbook.bib                Shared BibTeX database
 assets/
-  figures/                     Reusable figure assets
-  tables/                      Reusable table data and assets
+  figures/                    Reusable figure assets
+  tables/                     Reusable table data and assets
 docs/
-  book-outline.md              Topic roadmap and published-chapter map
-  style-guide.md               Writing, notation, and visual conventions
-  chapter-template.md          Adaptable chapter structure
-  codex-instructions.md        Required authoring and review workflow
-scripts/                       Maintenance helpers
-build/                         Versioned standalone chapter PDFs, grouped like `chapters/`
+  book-outline.md             Topic roadmap and published-chapter map
+  style-guide.md              Writing, notation, and visual conventions
+  chapter-template.md         Adaptable chapter structure
+  codex-instructions.md       Required authoring and review workflow
+scripts/
+  build-release.sh            Rebuild the complete v1.0 PDF
+  build-all-chapters.sh       Rebuild every standalone chapter PDF
+build/
+  the-foundation-model-handbook-v1.0.pdf  Complete release edition
+  <part>/                     Versioned standalone chapter PDFs
 ```
 
 Each chapter resides in `chapters/<part>/<number>-<topic>/main.typ`. Shared assets belong in `assets/`; a chapter-specific asset directory may be added inside its chapter only when that asset is not reused elsewhere.
 
-## Build the published chapters
+## Build the release edition
 
-Install [Typst](https://typst.app/) and build every published standalone chapter:
+Install [Typst](https://typst.app/) and build the complete v1.0 handbook:
+
+```bash
+./scripts/build-release.sh
+```
+
+The command compiles `main.typ` in the intended reading order and writes `build/the-foundation-model-handbook-v1.0.pdf`. It passes the `handbook=true` build input internally so that standalone chapter sources retain their local title-page presentation while the assembled edition uses book-level front matter, parts, table of contents, and running headers.
+
+## Build standalone chapters
+
+Build every published standalone chapter:
 
 ```bash
 ./scripts/build-all-chapters.sh
@@ -143,7 +164,13 @@ To build one chapter independently, preserve its part and slug in the output pat
 typst compile --root . chapters/pretraining/09-scaling-laws-and-compute/main.typ build/pretraining/09-scaling-laws-and-compute.pdf
 ```
 
-The thirty-nine current PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers `main.typ` files automatically, so a new peer section joins the complete build without duplicating a command list.
+The thirty-nine standalone PDFs are versioned so that their layout and writing style can be reviewed directly from the repository. The build helper discovers chapter `main.typ` files automatically, so a new peer section joins the standalone build without duplicating a command list.
+
+## References and authoring
+
+All chapters draw from the shared [BibTeX bibliography](references/handbook.bib). Entries favor DOI-backed source records and stable primary or standard references; each standalone chapter prints the references it uses so it can be read independently, and the complete edition preserves those local reference lists.
+
+The handbook's authoring contract is documented in the [style guide](docs/style-guide.md), [adaptable chapter template](docs/chapter-template.md), and [chapter workflow](docs/codex-instructions.md). Any future contribution should preserve the shared Typst infrastructure, compile both the affected standalone chapter and the assembled release edition when applicable, and visually inspect the resulting PDFs before publication.
 
 ## Development principles
 

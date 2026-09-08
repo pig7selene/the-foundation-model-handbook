@@ -1,6 +1,6 @@
 # Technical Chapter Roadmap
 
-This repository publishes independent technical chapters rather than a single assembled book. The roadmap records a coherent learning sequence, but it does not create source directories until a chapter is ready to be researched, written, and visually reviewed.
+Version 1.0 is published both as independent technical chapters and as an assembled handbook in `main.typ`. The roadmap records the dependency-aware reading sequence used by the release; chapter numbers remain stable publication identifiers rather than a forced linear curriculum.
 
 ## Core Six-Area Reading Map
 
@@ -85,9 +85,6 @@ The map deliberately uses cross-references rather than renumbering the published
 
 36. **Sparse and Long-Context Attention.** Structured attention connectivity; local, sliding-window, global, block-sparse, strided, dilated, and random patterns; Sparse Transformer, Longformer, and BigBird; receptive fields; decoder-only long-context constraints; KV Cache implications; RoPE extrapolation and context extension; retrieval versus long context; and implementation contracts. This chapter follows Chapter 35 by separating sparse architectural connectivity from FlashAttention-style dense execution.
 
-## Planned directions
+## Future editions
 
-- **Agents and Tool Use:** tool interfaces, planning, execution loops, memory, environment interaction, and agent evaluation.
-- **Multimodal Models:** vision-language inputs, multimodal tokenization and fusion, training objectives, evaluation, and system interfaces.
-
-Each future chapter should declare its scope, prerequisites, and sources in its own directory and should remain readable without a combined-book build.
+Future material, if developed, will be scoped as a later edition rather than silently folded into the v1.0 core roadmap. Any new chapter must declare its prerequisites and sources, remain independently readable, and be incorporated into an assembled edition only through an explicit update to the book manifest.
