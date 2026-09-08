@@ -1,90 +1,80 @@
 # Technical Chapter Roadmap
 
-Version 1.0 is published both as independent technical chapters and as an assembled handbook in `main.typ`. The roadmap records the dependency-aware reading sequence used by the release; chapter numbers remain stable publication identifiers rather than a forced linear curriculum.
+Version 1.0 is published both as independent technical chapters and as the assembled handbook in `main.typ`. Chapter numbers follow the conceptual reading order and run strictly from 1 through 39.
 
-## Core Six-Area Reading Map
+## Core six-area reading map
 
-The intended core roadmap is complete. Chapter numbers remain stable publication identifiers rather than a forced linear curriculum; the dependency-aware reading map is:
+1. **LLM Architecture:** Chapters 1--4 establish the token interface and decoder-only Transformer. Chapters 30--31 extend this foundation with attention execution, KV-representation design, and long-context connectivity.
+2. **Pretraining:** Chapters 5--12 develop the objective, data, optimization, numerical stability, scaling, distributed execution, diagnostics, and practical FSDP state.
+3. **Post-training / Alignment:** Chapters 13 and 15--22 develop SFT, preference learning, online alignment, evaluation, and distributed RL execution.
+4. **Parameter-Efficient Fine-Tuning:** Chapter 14 follows SFT and compares frozen-base adaptation methods under the same data and masking contracts.
+5. **Inference Optimization:** Chapters 23--31 move from autoregressive execution and KV state to quantization, scheduling, speculation, distributed inference, and efficient/long-context attention.
+6. **LLM Systems:** Chapters 10--12, 22, and 28--29 form the cross-cutting systems path for training, FSDP state, distributed RL coordination, and serving.
 
-1. **LLM Architecture:** Chapters 1--4 establish the input and Transformer model. Chapters 35--36 extend that foundation with attention execution, KV representations, and long-context connectivity.
-2. **Pretraining:** Chapters 5--11 develop objective, data, optimization, numerical stability, scaling, distributed execution, and diagnostics. Chapter 38 adds the practical FSDP and distributed-state lifecycle.
-3. **Post-training / Alignment:** Chapters 12--18, 37, and 39 develop SFT, preference learning, online alignment, evaluation, and distributed RL execution.
-4. **Parameter-Efficient Fine-Tuning:** Chapter 34 naturally follows Chapter 12 and compares frozen-base adaptation methods under the same SFT data and masking contracts.
-5. **Inference Optimization:** Chapters 19--25 move from autoregressive execution and KV state to quantization, scheduling, speculation, distributed inference, and system-level optimization.
-6. **LLM Systems:** Chapters 10, 24--25, 38, and 39 form the cross-cutting systems sequence for training, FSDP state, serving, and distributed RL coordination.
+**Retrieval-Augmented Generation:** Chapters 32--39 form the completed knowledge-augmentation extension and follow naturally after the inference and long-context foundations.
 
-The map deliberately uses cross-references rather than renumbering the published standalone PDFs.
+## Published chapters
 
-### Completed Extension
-
-**Retrieval-Augmented Generation:** Chapters 26--33 are a completed knowledge-augmentation extension that may be read after the inference foundation.
-
-## Published
-
-### Foundations
+### Part I — Foundations
 
 1. **Tokenization and Input Representations.** Vocabulary design, reserved symbols, BPE, embedding lookup, positional inputs, token budgets, and implementation contracts.
 
-### Architecture
+### Part II — Architecture
 
 2. **Transformer Architecture.** Decoder-only computation, residual streams, normalization placement, LM heads, shape contracts, and high-level resource costs.
 3. **Attention and Position Encoding.** Scaled Dot-Product Attention, causal masking, MHA/MQA/GQA, RoPE, tensor shapes, and KV-cache accounting.
 4. **Feed-Forward Networks, Normalization, and Residual Connections.** Position-wise and gated FFNs, activation functions, LayerNorm, RMSNorm, residual organization, initialization, gradient flow, and resource accounting.
 
-### Pretraining
+### Part III — Pretraining
 
 5. **Pretraining Objective and Language Modeling.** Autoregressive factorization, next-token prediction, logits, cross-entropy, teacher forcing, loss aggregation, perplexity, and implementation contracts.
 6. **Pretraining Data.** Data sources, extraction, filtering, deduplication, mixtures, tokenization, packing, token budgets, governance, and implementation contracts.
 7. **Optimization for Pretraining.** Mini-batch gradients, SGD, momentum, AdamW, learning-rate control, batch size, accumulation, clipping, optimizer-state memory, and implementation contracts.
 8. **Numerical Precision and Training Stability.** Floating-point formats, mixed precision, stable reductions and cross-entropy, loss scaling, diagnostics, and numerical implementation contracts.
-9. **Scaling Laws and Compute.** Parameter, token, and FLOP accounting; empirical power laws; compute-optimal allocation; Kaplan- and Chinchilla-style frontiers; planning limits; and reproducibility contracts.
+9. **Scaling Laws and Compute.** Parameter, token, and FLOP accounting; empirical power laws; compute-optimal allocation; scaling frontiers; planning limits; and reproducibility contracts.
 10. **Distributed Training.** DDP, Tensor, Pipeline, and Sequence Parallelism; ZeRO and FSDP sharding; collective communication; memory accounting; scaling efficiency; and distributed execution contracts.
-11. **Evaluation, Checkpointing, and Training Diagnostics.** Held-out validation and perplexity; online health metrics; failure localization; fully resumable and sharded checkpoints; recovery semantics; checkpoint selection; and reproducible experiment tracking.
-38. **Practical FSDP and Distributed Training State.** FSDP execution lifecycle; parameter, gradient, and optimizer-state sharding; All-Gather and Reduce-Scatter; wrapping granularity, mixed precision, activation checkpointing, offload, and prefetch; peak-memory and communication diagnosis; full and sharded state dictionaries; distributed checkpointing, restore, resharding, and implementation contracts. This chapter applies Chapter 10's distributed-training model and Chapter 11's resumability requirements without changing their scope.
+11. **Evaluation, Checkpointing, and Training Diagnostics.** Held-out validation and perplexity; online health metrics; failure localization; resumable and sharded checkpoints; recovery semantics; and experiment tracking.
+12. **Practical FSDP and Distributed Training State.** FSDP execution lifecycle; parameter, gradient, and optimizer-state sharding; All-Gather and Reduce-Scatter; wrapping, mixed precision, activation checkpointing, offload, prefetch, checkpointing, restore, resharding, and implementation contracts.
 
-### Post-training
+### Part IV — Post-training, Alignment, and Adaptation
 
-12. **Supervised Fine-Tuning.** Instruction-response demonstrations, Chat Templates, assistant-only loss masking, multi-turn supervision, data mixtures, full-parameter adaptation, LoRA, failure modes, evaluation, and implementation contracts.
-13. **Preference Data and Reward Modeling.** Pairwise comparisons, preference collection, Bradley-Terry ranking, sequence-level Reward Models, calibration, evaluation, distribution shift, reward hacking, and implementation contracts.
-14. **RLHF and PPO.** Autoregressive policies, on-policy Rollouts, policy gradients, actor-critic estimation, GAE, PPO clipping, reference-model KL regularization, reward shaping, stability, and implementation contracts.
-15. **Direct Preference Optimization.** Reference-relative sequence likelihoods, the implicit-reward derivation, the DPO objective, offline preference learning, the DPO--PPO trade-off, data limitations, and implementation contracts.
-16. **Group Relative Policy Optimization.** Grouped online Rollouts, relative rewards, critic-free group-normalized advantages, PPO-style clipping and KL control, verifiable reward interfaces, failure modes, and implementation contracts.
-17. **Reasoning RL, Rollouts, and Verifiable Rewards.** Sequential reasoning Rollouts, Outcome and Process Reward, deterministic verification, Best-of-$N$, Pass\@k, self-consistency, training- versus inference-time compute, failure modes, curriculum, and implementation contracts.
-18. **Post-Training Evaluation and Alignment Trade-offs.** Multi-objective evaluation, human and model-based judging, verifiers, regression suites, proxy overoptimization, contamination, capability regression, alignment tax, and evaluation contracts.
-37. **On-Policy Alignment and Iterative Policy Improvement.** Behavior-policy versions and rollout provenance; exploration, filtering, verifier-guided selection, and Expert Iteration; DAPO dynamic sampling, asymmetric clipping, token-level loss, and overlong-response shaping; online failure modes, monitoring, and implementation contracts. This chapter extends the algorithmic Post-training sequence without covering the distributed rollout-worker architecture reserved for Chapter 39.
-39. **Distributed RL Training Systems.** Actor, Rollout, Reward, Verifier, Critic, and Reference worker roles; training--inference separation; versioned trajectory data, policy synchronization, bounded rollout staleness, placement, backpressure, queues, and recovery; Ray resource orchestration; veRL and DataProto as concrete examples; FSDP and inference-engine integration; observability; and implementation contracts. This chapter applies the algorithms of Chapters 14, 16, 17, and 37 together with the distributed-state model of Chapter 38.
+13. **Supervised Fine-Tuning.** Instruction-response demonstrations, Chat Templates, assistant-only loss masking, multi-turn supervision, data mixtures, full-parameter adaptation, LoRA, failure modes, evaluation, and implementation contracts.
+14. **Parameter-Efficient Fine-Tuning.** LoRA and QLoRA; Adapters, Prefix Tuning, and Prompt Tuning; trainable-state and memory accounting; merging and multi-adapter serving; quantized-base adaptation; and implementation contracts.
+15. **Preference Data and Reward Modeling.** Pairwise comparisons, preference collection, Bradley-Terry ranking, sequence-level Reward Models, calibration, evaluation, distribution shift, reward hacking, and implementation contracts.
+16. **RLHF and PPO.** Autoregressive policies, on-policy Rollouts, policy gradients, actor-critic estimation, GAE, PPO clipping, reference-model KL regularization, reward shaping, stability, and implementation contracts.
+17. **Direct Preference Optimization.** Reference-relative sequence likelihoods, the implicit-reward derivation, the DPO objective, offline preference learning, the DPO--PPO trade-off, data limitations, and implementation contracts.
+18. **Group Relative Policy Optimization.** Grouped online Rollouts, relative rewards, critic-free advantages, PPO-style clipping and KL control, verifiable reward interfaces, failure modes, and implementation contracts.
+19. **Reasoning RL, Rollouts, and Verifiable Rewards.** Sequential reasoning Rollouts, Outcome and Process Reward, deterministic verification, Best-of-$N$, Pass\@k, self-consistency, training- versus inference-time compute, failure modes, curriculum, and implementation contracts.
+20. **Post-Training Evaluation and Alignment Trade-offs.** Multi-objective evaluation, human and model-based judging, verifiers, regression suites, proxy overoptimization, contamination, capability regression, alignment tax, and evaluation contracts.
+21. **On-Policy Alignment and Iterative Policy Improvement.** Behavior-policy versions and rollout provenance; exploration, filtering, verifier-guided selection, Expert Iteration, DAPO, online failure modes, monitoring, and implementation contracts.
+22. **Distributed RL Training Systems.** Actor, Rollout, Reward, Verifier, Critic, and Reference workers; training--inference separation; versioned trajectory data, placement, backpressure, queues, recovery, Ray, veRL, DataProto, FSDP, and inference-engine integration.
 
-### Inference and Serving
+### Part V — Inference and Serving
 
-19. **LLM Inference Fundamentals.** Autoregressive generation, Prefill and Decode, KV Cache accounting, sampling policies, context and batching, latency and throughput metrics, and inference implementation contracts.
-20. **KV Cache and Memory Optimization.** KV memory accounting, MHA/MQA/GQA cache layouts, paging and fragmentation, prefix reuse, cache lifecycle and eviction, KV Cache quantization, and implementation contracts.
-21. **Quantization for LLM Inference.** Affine quantization, granularity and calibration, weight-only and activation-aware regimes, PTQ and QAT, outliers, LLM.int8(), SmoothQuant, GPTQ, AWQ, kernel trade-offs, and implementation contracts.
-22. **Batching, Scheduling, and LLM Serving Systems.** Static, dynamic, and continuous batching; Prefill and Decode scheduling; queueing, admission, cache-aware capacity, preemption, fairness, service metrics, and implementation contracts.
-23. **Speculative Decoding and Inference Acceleration.** Draft-and-verify generation, exact speculative sampling, acceptance and residual correction, speed trade-offs, self-speculation, multi-token prediction, cache and serving interactions, and implementation contracts.
-24. **Distributed LLM Inference and Parallelism.** Inference execution groups and replicas; Tensor, Pipeline, Sequence, and Expert Parallelism; serving collectives; Prefill--Decode disaggregation; topology, cache placement, scaling limits, and implementation contracts.
-25. **Inference System Design and Performance Optimization.** Workload and SLO characterization; bottleneck classification; Roofline intuition; cache, quantization, batching, speculation, and distributed trade-offs; profiling, capacity planning, cost per token, regression testing, and implementation contracts.
+23. **LLM Inference Fundamentals.** Autoregressive generation, Prefill and Decode, KV Cache accounting, sampling, context and batching, latency and throughput metrics, and inference contracts.
+24. **KV Cache and Memory Optimization.** KV memory accounting, MHA/MQA/GQA cache layouts, paging and fragmentation, prefix reuse, cache lifecycle and eviction, KV Cache quantization, and implementation contracts.
+25. **Quantization for LLM Inference.** Affine quantization, granularity and calibration, weight-only and activation-aware regimes, PTQ and QAT, outliers, LLM.int8(), SmoothQuant, GPTQ, AWQ, kernel trade-offs, and implementation contracts.
+26. **Batching, Scheduling, and LLM Serving Systems.** Static, dynamic, and continuous batching; Prefill and Decode scheduling; queueing, admission, cache-aware capacity, preemption, fairness, and service metrics.
+27. **Speculative Decoding and Inference Acceleration.** Draft-and-verify generation, exact speculative sampling, acceptance and residual correction, speed trade-offs, self-speculation, multi-token prediction, cache and serving interactions, and implementation contracts.
+28. **Distributed LLM Inference and Parallelism.** Inference execution groups and replicas; Tensor, Pipeline, Sequence, and Expert Parallelism; serving collectives; Prefill--Decode disaggregation; topology, cache placement, scaling limits, and implementation contracts.
+29. **Inference System Design and Performance Optimization.** Workload and SLO characterization; bottleneck classification; Roofline intuition; cache, quantization, batching, speculation, and distributed trade-offs; profiling, capacity planning, cost per token, and regression testing.
 
-### Retrieval-Augmented Generation (complete)
+### Part VI — Efficient Attention and Long Context
 
-26. **Retrieval-Augmented Generation Fundamentals.** External versus parametric knowledge; offline indexing and online retrieval; corpus units, top-$k$ ranking, context construction, grounded generation, retrieval quality, freshness, provenance, RAG--fine-tuning trade-offs, and implementation contracts.
-27. **Embeddings and Semantic Retrieval.** Dense query and document embeddings; Dual-Encoders; similarity geometry and normalization; contrastive learning and negatives; semantic-retrieval storage, domain effects, failure modes, and implementation contracts.
-28. **Vector Search and Approximate Nearest Neighbors.** Exact search and ANN recall; IVF, Product Quantization, and HNSW; candidate generation, filters, index lifecycle, memory and hardware trade-offs, vector databases, and implementation contracts.
-29. **Chunking and Document Segmentation.** Retrieval units and boundaries; fixed-length, linguistic, structure-aware, and semantic segmentation; chunk size and overlap; provenance, hierarchy, parent--child retrieval, special document forms, re-indexing, and implementation contracts.
-30. **Sparse Retrieval and Hybrid Search.** Bag-of-Words, TF-IDF, BM25, and inverted indexes; sparse--dense complementarity; candidate union, score and rank fusion, RRF, learned sparse retrieval, filtering, failure diagnosis, and implementation contracts.
-31. **Reranking and Retrieval Refinement.** Recall-oriented candidate generation; Bi-Encoders and Cross-Encoders; pointwise, pairwise, and listwise ranking; LLM reranking, diversity-aware context selection, cascades, latency, failure diagnosis, and implementation contracts.
-32. **Advanced Retrieval and RAG Architectures.** Query rewriting, expansion, Multi-Query Retrieval, decomposition, HyDE, feedback-driven and multi-hop retrieval; hierarchical, recursive, and graph-based retrieval; adaptive routing, evidence aggregation, conflict handling, and implementation contracts.
-33. **RAG Evaluation and Diagnostics.** Component and end-to-end evaluation; retrieval, context, generation, grounding, and citation metrics; ablations, error attribution, evaluation data, regression suites, online signals, cost, and implementation contracts.
+30. **Efficient Attention and Head-Representation Design.** Attention IO and intermediate-state costs; tiled exact attention, online Softmax, FlashAttention, MHA/MQA/GQA/MLA, positional compatibility, KV Cache and Decode trade-offs, and implementation contracts.
+31. **Sparse and Long-Context Attention.** Structured attention connectivity; local, sliding-window, global, block-sparse, strided, dilated, and random patterns; long-context constraints; RoPE extension; retrieval versus long context; and implementation contracts.
 
-### Parameter-Efficient Fine-Tuning
+### Part VII — Retrieval-Augmented Generation and Knowledge Augmentation
 
-34. **Parameter-Efficient Fine-Tuning.** Full fine-tuning versus frozen-base adaptation; LoRA and QLoRA; Adapter, Prefix Tuning, and Prompt Tuning methods; trainable-state and memory accounting; merging and multi-adapter serving; quantized-base adaptation; failure modes; and implementation contracts. This chapter follows Chapter 12 conceptually and is published as a later peer chapter to preserve the established standalone sequence.
-
-### Efficient Attention
-
-35. **Efficient Attention and Head-Representation Design.** Attention IO and intermediate-state costs; tiled exact attention and online Softmax; FlashAttention and later execution improvements; MHA, MQA, GQA, and MLA as KV-representation designs; positional-encoding compatibility; KV Cache and Decode trade-offs; architectural versus kernel optimization; and implementation contracts. This chapter builds on Chapter 3's attention derivation, Chapter 20's KV Cache lifecycle, and Chapter 25's bottleneck analysis without changing their scope.
-
-36. **Sparse and Long-Context Attention.** Structured attention connectivity; local, sliding-window, global, block-sparse, strided, dilated, and random patterns; Sparse Transformer, Longformer, and BigBird; receptive fields; decoder-only long-context constraints; KV Cache implications; RoPE extrapolation and context extension; retrieval versus long context; and implementation contracts. This chapter follows Chapter 35 by separating sparse architectural connectivity from FlashAttention-style dense execution.
+32. **Retrieval-Augmented Generation Fundamentals.** External versus parametric knowledge; indexing and retrieval; corpus units, top-$k$ ranking, context construction, grounding, freshness, provenance, RAG--fine-tuning trade-offs, and implementation contracts.
+33. **Embeddings and Semantic Retrieval.** Dense query and document embeddings; Dual-Encoders; similarity geometry and normalization; contrastive learning and negatives; semantic-retrieval storage, domain effects, failure modes, and implementation contracts.
+34. **Vector Search and Approximate Nearest Neighbors.** Exact search and ANN recall; IVF, Product Quantization, and HNSW; candidate generation, filters, index lifecycle, memory and hardware trade-offs, and implementation contracts.
+35. **Chunking and Document Segmentation.** Retrieval units and boundaries; fixed-length, linguistic, structure-aware, and semantic segmentation; chunk size and overlap; provenance, hierarchy, parent--child retrieval, and re-indexing.
+36. **Sparse Retrieval and Hybrid Search.** Bag-of-Words, TF-IDF, BM25, and inverted indexes; sparse--dense complementarity; candidate union, score and rank fusion, RRF, learned sparse retrieval, filtering, and diagnosis.
+37. **Reranking and Retrieval Refinement.** Candidate generation; Bi-Encoders and Cross-Encoders; ranking objectives; LLM reranking; diversity-aware context selection, cascades, latency, and failure diagnosis.
+38. **Advanced Retrieval and RAG Architectures.** Query rewriting, expansion, Multi-Query Retrieval, decomposition, HyDE, feedback-driven and multi-hop retrieval; hierarchical and graph-based retrieval; adaptive routing, evidence aggregation, conflict handling, and implementation contracts.
+39. **RAG Evaluation and Diagnostics.** Component and end-to-end evaluation; retrieval, context, generation, grounding, and citation metrics; ablations, error attribution, evaluation data, regression suites, online signals, cost, and implementation contracts.
 
 ## Future editions
 
-Future material, if developed, will be scoped as a later edition rather than silently folded into the v1.0 core roadmap. Any new chapter must declare its prerequisites and sources, remain independently readable, and be incorporated into an assembled edition only through an explicit update to the book manifest.
+Future material will be scoped as a later edition rather than silently folded into the v1.0 core roadmap. A new chapter must declare prerequisites and sources, remain independently readable, and be incorporated into the assembled edition only through an explicit manifest update.
